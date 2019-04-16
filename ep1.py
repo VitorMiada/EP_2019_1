@@ -1,7 +1,7 @@
 # EP 2019-1: Escape Insper
 #
 # Alunos: 
-# - aluno A: Vitor Kenzo Fujiwara Miada, sophiaks@al.insper.edu.br
+# - aluno Vitao Kenzao Fujiwara Miada, sophiaks@al.insper.edu.br
 # - aluno B: Sophia Kerber Shigueoka, vitorkfm@al.insper.edu.br
 
 def carregar_cenarios():
