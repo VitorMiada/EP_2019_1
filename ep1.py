@@ -62,6 +62,8 @@ def main():
 
         # Aluno A: substitua este comentário pelo código para imprimir
         # o cenário atual.
+        for k,v in cenarios["inicio"].items():
+            print(v)
 
         opcoes = cenario_atual['opcoes']
         if len(opcoes) == 0:
@@ -71,7 +73,6 @@ def main():
 
             # Aluno B: substitua este comentário e a linha abaixo pelo código
             # para pedir a escolha do usuário.
-            escolha = ""
 
             if escolha in opcoes:
                 nome_cenario_atual = escolha
@@ -86,4 +87,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-###teste:só pra ver se é este arquivo mesmo!
+# teste:só pra ver se é este arquivo mesmo!
