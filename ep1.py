@@ -85,3 +85,5 @@ def main():
 # Programa principal.
 if __name__ == "__main__":
     main()
+
+###teste:só pra ver se é este arquivo mesmo!
