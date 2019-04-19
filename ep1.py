@@ -60,9 +60,18 @@ def main():
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
 
-=======
-        for k,v in cenarios['inicio'].items():
-            print (v)
+
+for k, v in cenarios["inicio"].items():
+    print(v)
+a = input('Para onde você quer ir?')
+if a == "andar professor":
+    for k, v in cenarios["andar professor"].items():
+        print(v)
+b = input('Para onde você quer ir?')
+if b == "biblioteca":
+    for k, v in cenarios["biblioteca"].items():
+        print(v)
+
 
 # Programa principal.
 if __name__ == "__main__":
