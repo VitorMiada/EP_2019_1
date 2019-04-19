@@ -59,7 +59,7 @@ def main():
     game_over = False
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
-        for k,v in cenario['inicio'].items():
+        for k,v in cenarios['inicio'].items():
             print (v)
 
 # Programa principal.
