@@ -73,9 +73,12 @@ def main():
 
             # Aluno B: substitua este comentário e a linha abaixo pelo código
             # para pedir a escolha do usuário.
+            escolha = input("Escolha ir para o andar do professor ou para a biblioteca   \n")
 
             if escolha in opcoes:
                 nome_cenario_atual = escolha
+                for k,v in cenarios[nome_cenario_atual].items():
+                    print(v)
             else:
                 print("Sua indecisão foi sua ruína!")
                 game_over = True
