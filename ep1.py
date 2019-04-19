@@ -1,7 +1,7 @@
 # EP 2019-1: Escape Insper
 #
 # Alunos:
-# - aluno Vitor Kenzo Fujiwara Miada, sophiaks@al.insper.edu.br
+# - aluno A: Vitor Kenzo Fujiwara Miada, sophiaks@al.insper.edu.br
 # - aluno B: Sophia Kerber Shigueoka, vitorkfm@al.insper.edu.br
 
 
@@ -59,28 +59,8 @@ def main():
     game_over = False
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
-
-        # Aluno A: substitua este comentário pelo código para imprimir
-        # o cenário atual.
-
-        opcoes = cenario_atual['opcoes']
-        if len(opcoes) == 0:
-            print("Acabaram-se suas opções! Mwo mwo mwooooo...")
-            game_over = True
-        else:
-
-            # Aluno B: substitua este comentário e a linha abaixo pelo código
-            # para pedir a escolha do usuário.
-            escolha = ""
-
-            if escolha in opcoes:
-                nome_cenario_atual = escolha
-            else:
-                print("Sua indecisão foi sua ruína!")
-                game_over = True
-
-    print("Você morreu!")
-
+        for k,v in cenario['inicio'].items():
+            print (v)
 
 # Programa principal.
 if __name__ == "__main__":
