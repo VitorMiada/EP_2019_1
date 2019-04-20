@@ -193,7 +193,7 @@ def batalha():
                 print("O golpe não foi efetivo!")
             else: vida_do_inimigo -= dano
 
-        if golpes == "Usar item":
+        if golpes == "Usar item": 
             a = 1 ###AJUSTAR
             b = 1 ###AJUSTAR
             n = random.randint(a, b)
@@ -216,7 +216,7 @@ def batalha():
             print ("Parabens voce derrotou o professor!!!")
     while vida_do_inimigo > 0:
         sua_vida -= 10#random entre 10 a 20
-        print ("O inimigo te bateu!. Sua vida é" (sua_vida))
+        print ("O inimigo te bateu!. Sua vida é {0}".format(sua_vida))
         
             
         
