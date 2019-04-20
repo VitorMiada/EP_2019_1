@@ -33,7 +33,7 @@ def carregar_cenarios():
         },
         "biblioteca": {
             "titulo": "Caverna da tranquilidade",
-            "descricao": "Voce esta na biblioteca. Voce vai falar com a bibliotecaria e ela misteriosamente diz: It's dangerous to come alone, TAKE THIS!!. Voce recebeu o livro O golem ",
+            "descricao": "Voce esta na biblioteca. Voce vai falar com a bibliotecaria e ela misteriosamente diz: It's dangerous to go alone, TAKE THIS!!. Voce recebeu o livro O golem ",
             "opcoes": {
                 "inicio": "Voltar para o saguao de entrada",
                 "aquario": "Pegar um aquario"
@@ -116,29 +116,34 @@ def carregar_cenarios():
     return cenarios, nome_cenario_atual
 inventario = []
 def batalha():
-    vida  = 100
-    print ('vida = 100')
+    vida_do_inimigo  = 100
+    sua_vida = 100
+    print ('Vida do inimigo" = 100')
+    print ("Sua vida")
     print ("A new foe has appeard")
     
-    while vida > 0:
+    while vida_do_inimigo > 0:
         golpes = input("O que deseja fazer: Jogar um chinelo (#entre 5 a 15 de vida), Dialogo (#entre 10 e 12), Usar um item, Cabecada (#entre 20 e 30)")# a ser desenvolvido
         if golpes =="Jogar um chinelo":
-            vida-=10#random
+            vida_do_inimigo-=10#random
             
         if golpes =="Dialogo":
-            vida -=11
+            vida_do_inimigo -=11
         
         if golpes == "Usar item":
-            vida -= 10
-            print (inventario)# a ser desenvolvido
+            vida_do_inimigo -= 10
+            print (inventario)
         
         if golpes == "Cabecada":
-            vida -=25#random
-        print (vida)
+            vida_do_inimigo -=25#random
+        print (vida_do_inimigo)
         
            
-        if vida <= 0:
+        if vida_do_inimigo <= 0:
             print ("Parabens voce derrotou o professor!!!")
+    while vida_do_inimigo > 0:
+        sua_vida -= 10#random entre 10 a 20
+        print ("O inimigo te bateu!. Sua vida é" (sua_vida))
         
             
         
