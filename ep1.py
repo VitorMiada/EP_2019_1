@@ -23,11 +23,13 @@ def carregar_cenarios():
             }
         },
         "professor": {
-            "titulo": "O monstro do Python",
-            "descricao": "Voce foi pedir para o professor adiar o EP. "
-                         "O professor revelou que é um monstro disfarçado "
-                         "e devorou sua alma.",
-            "opcoes": {}
+            "titulo": "O guardião",
+            "descricao": "Voce foi até a porta da sala do professor, porém existem golens guardiões ligados a uma protoboard. "
+                         "Voce vai falar com o golem e ele te empurra para tras não deixando voce entrar na sala "
+                         "Voce precisa de mais itens.",
+            "opcoes": {
+                "inicio": "Voltar para o saguão"
+            }
         },
         "biblioteca": {
             "titulo": "Caverna da tranquilidade",
@@ -47,7 +49,7 @@ def carregar_cenarios():
         },
         "s": {
             "titulo": "Sebastião Camargo",
-            "descricao": "Você acorda na frente da sala Sebastião Camargo. /n Ihh! Você entrou no meio de uma aula do sétimo semestre de economia.",
+            "descricao": "Você acorda na frente da sala Sebastião Camargo. Ihh! Você entrou no meio de uma aula do sétimo semestre de economia.",
             "opcoes": {
                 "voltar": "Sair de fininho e fingir que nada aconteceu",
                 "disfarce": "Colocar sua fantasia de economista e fingir que você pertence ao grupo",
@@ -66,12 +68,21 @@ def carregar_cenarios():
                 "titulo": "Pego de surpresa",
                 "descricao" : "Voce tentou fugir da sala mas o professor te pegou!. LUTE COM ELE!!(obs: nao lute com seu professor isso é so um joguinho ;)",
                 "opcoes": {
-                        "lutar": "lute com o professor"
-            },
+                        "lutar1": "lute com o professor"
+            }
                        
+        },
+        "lutar1" :{
+                "titulo":" De volta ao saguão",
+                "descricao" : "Após a luta voce retorna ao saguão e descobre outro caminho.",
+                "opcoes":{
+                        "andar professor": "Tomar o elevador para o andar do professor",
+                        "biblioteca": "Ir para a biblioteca",
+                        "elevador": "Chamar o elevador" 
+             }
         }
-        "lutar":{
-                "titulo": }   }
+                }
+        
            
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
@@ -80,8 +91,9 @@ def batalha():
     vida  = 100
     print ('vida = 100')
     print ("A new foe has appeard")
-    golpes = input("O que deseja fazer: Jogar um chinelo (#entre 5 a 15 de vida), Dialogo (#entre 10 e 12), Usar um item, Cabecada (#entre 20 e 30)")# a ser desenvolvido
+    
     while vida > 0:
+        golpes = input("O que deseja fazer: Jogar um chinelo (#entre 5 a 15 de vida), Dialogo (#entre 10 e 12), Usar um item, Cabecada (#entre 20 e 30)")# a ser desenvolvido
         if golpes =="Jogar um chinelo":
             vida-=10#random
             
@@ -95,9 +107,9 @@ def batalha():
         if golpes == "Cabecada":
             vida -=25#random
         print (vida)
-        golpes = input(" O que deseja fazer: Jogar um chinelo (#entre 5 a 15 de vida), Dialogo (#entre 10 e 12), Usar um item, Cabecada (#entre 20 e 30)")
+        
            
-        if vida <= "0":
+        if vida <= 0:
             print ("Parabens voce derrotou o professor!!!")
         
             
@@ -144,8 +156,11 @@ def main():
                 game_over = True
                 print("Você morreu!")
         if escolha  == "biblioteca":
-            inventario.append('livro, O Golem') 
-        if escolha == "lutar":            
+            inventario.append('livro, O Golem')
+        if escolha == "lutar1":
+            inventario.append("Termorresistencia")
+            
+        if escolha == "lutar1":            
             batalha()
 
 # Programa principal.
