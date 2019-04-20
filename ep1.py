@@ -179,17 +179,36 @@ def batalha():
     while vida_do_inimigo > 0:
         golpes = input("O que deseja fazer: Jogar um chinelo (#entre 5 a 15 de vida), Dialogo (#entre 10 e 12), Usar um item, Cabecada (#entre 20 e 30)")# a ser desenvolvido
         if golpes =="Jogar um chinelo":
-            vida_do_inimigo-=10#random
-            
+            import random
+            n = random.randint(5, 15)
+            dano = n
+            if n == 0:
+                print("O golpe não foi efetivo!")
+            vida_do_inimigo -= dano
+
         if golpes =="Dialogo":
-            vida_do_inimigo -=11
-        
+            n = random.randint(10, 12)
+            dano = n
+            if dano == 0:
+                print("O golpe não foi efetivo!")
+            else: vida_do_inimigo -= dano
+
         if golpes == "Usar item":
-            vida_do_inimigo -= 10
+            a = 1 ###AJUSTAR
+            b = 1 ###AJUSTAR
+            n = random.randint(a, b)
+            dano = n
+            if dano == 0:
+                print("O golpe não foi efetivo!")
+            else: vida_do_inimigo -= dano
             print (inventario)
         
         if golpes == "Cabecada":
-            vida_do_inimigo -=25#random
+            n = random.randint(20, 30)
+            dano = n
+            if dano == 0:
+                print("O golpe não foi efetivo!")
+            else: vida_do_inimigo -= dano
         print (vida_do_inimigo)
         
            
