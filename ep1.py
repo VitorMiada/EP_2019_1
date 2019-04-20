@@ -7,8 +7,8 @@ import random
 def carregar_cenarios():
     cenarios = {
         "inicio": {
-            "titulo": "Saguao do perigo",
-            "descricao": "Voce esta no saguao de entrada do insper",
+            "titulo": "Saguão do perigo",
+            "descricao": "Você esta no saguão de entrada do Insper",
             "opcoes": {
                 "andar professor": "Tomar o elevador para o andar do professor",
                 "biblioteca": "Ir para a biblioteca"
@@ -18,37 +18,37 @@ def carregar_cenarios():
             "titulo": "Andar do desespero",
             "descricao": "Voce chegou ao andar da sala do seu professor",
             "opcoes": {
-                "inicio": "Tomar o elevador para o saguao de entrada",
+                "inicio": "Tomar o elevador para o saguão de entrada",
                 "professor": "Falar com o professor"
             }
         },
         "professor": {
             "titulo": "O guardião",
-            "descricao": "Voce foi até a porta da sala do professor, porém existem golens guardiões ligados a uma protoboard. "
-                         "Voce vai falar com o golem e ele te empurra para tras não deixando voce entrar na sala "
-                         "Voce precisa de mais itens.",
+            "descricao": "Você foi até a porta da sala do professor, porém existem golens guardiões ligados a uma protoboard. "
+                         "Você vai falar com o golem. Ele te empurra para trás e não te deixa entrar na sala "
+                         "Você precisa de mais itens.",
             "opcoes": {
                 "inicio": "Voltar para o saguão"
             }
         },
         "biblioteca": {
             "titulo": "Caverna da tranquilidade",
-            "descricao": "Voce esta na biblioteca. Voce vai falar com a bibliotecaria e ela misteriosamente diz: It's dangerous to go alone, TAKE THIS!!. Voce recebeu o livro O golem ",
+            "descricao": "Você está na biblioteca. Você vai falar com a bibliotecaria e ela misteriosamente diz: It's dangerous to go alone, TAKE THIS!!. \n Você recebeu o livro 'O golem' ",
             "opcoes": {
-                "aquario": "Pegar um aquario"
+                "aquario": "Pegar um aquário"
             }
         },
         "aquario": {
             "titulo": "Sala do sonho",
-            "descricao": "Voce entrou em um aquario e acabou pegando no sono, tendo um sonho no qual nao era possivel sair dele sem responder a grande pergunta: sim ou não?",
+            "descricao": "Você entrou em um aquário e acabou pegando no sono, tendo um sonho no qual não era possivel acordar sem responder uma pergunta: o teletransporte é possível?",
             "opcoes": {
                 "s": "sim",
-                "n": "nao"
+                "n": "não"
             }
         },
         "s": {
             "titulo": "Sebastião Camargo",
-            "descricao": "Você acorda na frente da sala Sebastião Camargo e entra nela. Ihh! Você entrou no meio de uma aula de NatDes.",
+            "descricao": "Parece que sua resposta estava correta. Você acorda na frente da sala Sebastião Camargo e entra nela. Ihh! Você entrou no meio de uma aula de NatDes.",
             "opcoes": {
                 "voltar": "Sair de fininho e fingir que nada aconteceu",
                 "disfarce": "Colocar o seu protótipo na cabeça e sair da sala",
@@ -57,7 +57,7 @@ def carregar_cenarios():
         },
         "n": {
             "titulo": "L3",
-            "descricao" : "Você acorda no L3. Os fornos para calibrar sua termorresistência estão todos nas bancadas.",
+            "descricao" : "Sua resposta estava errada. O teletransporte é possível! Você acorda no L3. Os fornos para calibrar sua termorresistência estão todos nas bancadas.",
             "opcoes": {
                 "exemplar": "Ser um bom aluno e acabar seu relatório",
                 "desonesto": "Descalibrar todos os fornos"
@@ -65,7 +65,7 @@ def carregar_cenarios():
         },
         "exemplar": {
                    "titulo": "Parceria com o Carlinhos",
-                   "descricao": "Voce fez prefeitamente seu relatorio. Ao explicar sua situação ao Carlos, ele te ajuda, dando uma termorresistência. Voce pegou o elevador e foi para o quinto andar. ",
+                   "descricao": "Voce fez perfeitamente seu relatório. Ao explicar sua situação ao Carlos, ele te ajuda, te dando uma termorresistência. Você pega o elevador e vai para o quinto andar. ",
                    "opcoes": {
                         "5": "Ir para o quinto andar"
                     }
@@ -79,7 +79,7 @@ def carregar_cenarios():
                     },
                     "lutar2":{
                             "titulo": "Ida ao elevador",
-                            "descricao": "Apos a luta vc vai para o elevador ou para o aquario recuperar suas energias",
+                            "descricao": "Apás a luta você vai para o elevador",
                             "opcoes":{
                                     "1": "Primeiro andar",
                                     "2": "Segundo andar",
@@ -90,7 +90,7 @@ def carregar_cenarios():
                             },
         "voltar": {
                 "titulo": "Pego de surpresa",
-                "descricao" : "Voce tentou fugir da sala mas o professor te pegou!. LUTE COM ELE!!(obs: nao lute com seu professor isso é so um joguinho ;)",
+                "descricao" : "Você tentou fugir da sala mas o professor te pegou!. \n LUTE COM ELE!!(obs: não lute com seu professor, isso é so um joguinho!)",
                 "opcoes": {
                         "lutar1": "lute com o professor"
             }
@@ -98,21 +98,21 @@ def carregar_cenarios():
         },
         "disfarce": {
                    "titulo": "O mestre do disfarce",
-                   "descricao": "Ao colocar seu protótipo na cabeça, voce percbe que ele serve como uma capa de invisibilidade. Voce ganhou o Protótipo. Voce foi para o quinto andar.",
+                   "descricao": "Ao colocar seu protótipo na cabeça, voce percebe que ele serve como uma capa de invisibilidade. Voce ganhou o Protótipo e foi para o quinto andar.",
                    "opcoes":{
                            "5": "Ir para a o quinto andar"
                            }
                    },
         "ousadia": {
                 "titulo": " Not so ousado",
-                "descricao": "Ao dizer que voce era o verdadeiro Vitor Macul, todos riem e o verdadeiro Vitor Macul te expulsa da aula. Voce retornou para a frente da sala.",
+                "descricao": "Ao dizer que você era o verdadeiro Vitor Macul, todos riem e o verdadeiro Vitor Macul te expulsa da aula. \n Você retornou para a frente da sala.",
                 "opcoes":{
                         "s": "Voltar para voltar pra frente da sala"
                         }
                 },
         "lutar1" :{
                 "titulo":" O elevador",
-                "descricao" : "Após a luta voce vai para o elevador.",
+                "descricao" : "Após a luta você vai para o elevador.",
                 "opcoes":{
                         "elevador": "Chamar o elevador",
                         "aquario": "Voltar pro aquario"
@@ -120,7 +120,7 @@ def carregar_cenarios():
         },
         "elevador": {
                 "titulo": "O Elevador macabro",
-                "descricao": "Voce entra no elevador. Qual andar voce deseja?",
+                "descricao": "Você entra no elevador. Para qual andar você deseja ir?",
                 "opcoes":{
                         "1": "primeiro andar",
                         "2": "segundo andar",
@@ -131,7 +131,7 @@ def carregar_cenarios():
                 },
                 "1":{
                     "titulo": "O primeiro andar",
-                    "descricao": "Voce chega no primeiro andar e se incomoda com alguma coisa....",
+                    "descricao": "Você chega no primeiro andar e se incomoda com alguma coisa....",
                     "opcoes":{
                             "nerdbox": "Entrar no NerdBox",
                             "elevador": "Voltar para o elevador"
@@ -139,14 +139,14 @@ def carregar_cenarios():
                     },
                     "nerdbox":{
                             "titulo": "A caixa da depressão",
-                            "descricao": "Ao adentrar no NerdBox, voce encontra o Pelicano. Ele diz que ja tentou alterar a data do EP mas falhou mizeravelmente. Porém ele diz acreditar em voce entao ele te deu uma espada",
+                            "descricao": "Ao adentrar no NerdBox, você encontra o Pelicano. Ele diz que ja tentou alterar a data do EP, mas falhou miseravelmente. Porém, diz acreditar em você, e te dá a espada da modelagem",
                             "opcoes": {
                                     "elevador": "Ir para o elevador"
                                     }
                             },
                     "2":{
                      "titulo": "O segundo andar",
-                     "descricao": "Voce chega no segundo andar e avista o Fernando de GDE",
+                     "descricao": "Você chega no segundo andar e avista o Fernando de GDE",
                      "opcoes": {
                              "falar": "Falar com o Fernando",
                              "elevador": "Voltar para o elevador"
@@ -154,43 +154,43 @@ def carregar_cenarios():
                      },
                      "3": {
                       "titulo": "Melhor amigo, pior inimigo",
-                      "descricao": "O seu amigo ou inimigo Fukada acabou hackeando o elevador. Ele esta indisponivel para ir pro terceiro andar",
+                      "descricao": "O seu amigo/inimigo Lucas Fukada acabou hackeando o elevador. Você não pode ir pro terceiro andar",
                       "opcoes": {
                               "elevador": "Voltar para o elevador"
                               }
                       },
                       "4": {
                               "titulo": "Melhor amigo, pior inimigo",
-                              "descricao": "O seu amigo ou inimigo Fukada acabou hackeando o elevador. Ele esta indisponivel para ir pro terceiro andar",
+                              "descricao": "O seu amigo/inimigo Lucas Fukada acabou hackeando o elevador. Você não pode ir pro quarto andar",
                       "opcoes": {
                               "elevador": "Voltar para o elevador"
                               }
                       },
                       "5": {
                               "titulo": "O refeitorio",
-                              "descricao": "Voce acaba de chegar no restaurante e acha um arduino (nao se sabe porque esta lá). Voce recebeu o arduino!",
+                              "descricao": "Você acabou de chegar no restaurante e acha um arduíno (não se sabe porque está lá). Você recebeu o arduino!",
                               "opcoes":{
                                       "ficar": "Voce irá para as salas das entidades"
                                       }
                       },
                       "ficar": {
                               "titulo": "Os ninjas assassinos",
-                              "descricao": "Voce esta andando pelas salas das entidades e se sente vigiado. Não tinha ninguem la apenas voce, era o que vc achava. Do nada surge um ninja veterano te desafiando para uma luta",
+                              "descricao": "Você está andando pelas salas das entidades e se sente vigiado. Não tem ninguém lá, apenas você, ou era o que você achava... \n Do nada surge um ninja veterano te desafiando para uma luta",
                               "opcoes": {
                                       "lutar": "Lutar com o ninja",
                                       "fugir": "Escapar do ninja"
                                       }
                       },
                       "fugir": {
-                              "titulo": "Voce nao escapará!!",
-                              "descricao": "Voce tentou fugir mas ninjas não deixam vc escapar",
+                              "titulo": "Não escaparás!!",
+                              "descricao": "Você tenta fugir mas os ninjas não te deixam escapar",
                               "opcoes": {
                                       "lutar": "Lutar contra o ninja"
                                       }
                               },
                       "lutar": {
                               "titulo": "Honra do ninja",
-                              "descricao":"Após vencer o ninja ele o leva para o covil do Raul. Agora voce precisa enfrentar os golens!!",
+                              "descricao":"Após vencer o ninja, ele o leva para o covil do Raul. \n Agora você precisa enfrentar os golens!!",
                               "opcoes": {
                                       "lutar4": "Lutar contra os golens"
                                       }
@@ -239,8 +239,8 @@ def main():
     print("Na hora do sufoco!")
     print("------------------")
     print()
-    print("Parecia uma boa idéia: vou só jogar um pouquinho/assistir Netflix/"
-          "embaçar em geral. Amanhã eu começo o EP. Mas isso não deu certo...")
+    print("Parecia uma boa ideia: vou só jogar um pouquinho e assistir um episódio de Netflix"
+          "Amanhã eu começo o EP. Mas isso não deu certo...")
     print()
     print("É o dia de entregar o EP e você está muuuuito atrasado! Você está "
           "na entrada do Insper, e quer procurar o professor para pedir um "
@@ -263,10 +263,10 @@ def main():
             game_over = True
         else:
             
-            escolha = input("Escolha uma opcao \n")
+            escolha = input("Escolha uma opção \n")
             while escolha not in cenarios:
                 print ("ação invalida")
-                escolha = input("Escolha uma opcao \n")
+                escolha = input("Escolha uma opção \n")
 
             if escolha in opcoes:
                 nome_cenario_atual = escolha
