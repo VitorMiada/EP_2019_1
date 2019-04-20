@@ -35,7 +35,7 @@ def carregar_cenarios():
             "titulo": "Caverna da tranquilidade",
             "descricao": "Voce esta na biblioteca. Voce vai falar com a bibliotecaria e ela misteriosamente diz: It's dangerous to go alone, TAKE THIS!!. Voce recebeu o livro O golem ",
             "opcoes": {
-                "inicio": "Voltar para o saguao de entrada",
+                
                 "aquario": "Pegar um aquario"
             }
         },
@@ -66,9 +66,9 @@ def carregar_cenarios():
         },
         "exemplar": {
                    "titulo": "Parceria com o Carlinhos",
-                   "descricao": "Voce fez prefeitamente seu relatorio. Ao explicar sua situação ao Carlos, ele te ajuda, dando uma termorresistência. Voce voltou para o saguão. ",
+                   "descricao": "Voce fez prefeitamente seu relatorio. Ao explicar sua situação ao Carlos, ele te ajuda, dando uma termorresistência. Voce pegou o elevador e foi para o quinto andar. ",
                    "opcoes": {
-                        "inicio": "Voltar para o saguão de entrada"
+                        "5": "Ir para o quinto andar"
                     }
                  },
         "desonesto": {
@@ -80,7 +80,7 @@ def carregar_cenarios():
                     },           
         "voltar": {
                 "titulo": "Pego de surpresa",
-                "descricao" : "Você tentou fugir da sala mas o professor te pegou!. LUTE COM ELE!!(obs: nao lute com seu professor isso é so um joguinho ;)",
+                "descricao" : "Voce tentou fugir da sala mas o professor te pegou!. LUTE COM ELE!!(obs: nao lute com seu professor isso é so um joguinho ;)",
                 "opcoes": {
                         "lutar1": "lute com o professor"
             }
@@ -88,27 +88,81 @@ def carregar_cenarios():
         },
         "disfarce": {
                    "titulo": "O mestre do disfarce",
-                   "descricao": "Ao colocar seu protótipo na cabeça, voce percbe que ele serve como uma capa de invisibilidade. Voce ganhou o Protótipo. Voce volta para o saguão.",
+                   "descricao": "Ao colocar seu protótipo na cabeça, voce percbe que ele serve como uma capa de invisibilidade. Voce ganhou o Protótipo. Voce foi para o quinto andar.",
                    "opcoes":{
-                           "inicio": "Voltar para o saguão de entrada"
+                           "5": "Ir para a o quinto andar"
                            }
                    },
         "ousadia": {
                 "titulo": " Not so ousado",
-                "descricao": "Ao dizer que voce era o verdadeiro Vitor Macul, todos riem e o verdadeiro Vitor Macul te expulsa da aula. Voce retornou para o saguão.",
+                "descricao": "Ao dizer que voce era o verdadeiro Vitor Macul, todos riem e o verdadeiro Vitor Macul te expulsa da aula. Voce retornou para a frente da sala.",
                 "opcoes":{
-                        "inicio": "Voltar para o saguão de entrada"
+                        "s": "Voltar para voltar pra frente da sala"
                         }
                 },
         "lutar1" :{
                 "titulo":" De volta ao saguão",
-                "descricao" : "Após a luta voce retorna ao saguão e descobre outro caminho.",
+                "descricao" : "Após a luta voce vai para o elevador.",
                 "opcoes":{
-                        "andar professor": "Tomar o elevador para o andar do professor",
-                        "biblioteca": "Ir para a biblioteca",
                         "elevador": "Chamar o elevador" 
              }
-        }
+        },
+        "elevador": {
+                "titulo": "O Elevador macabro",
+                "descricao": "Voce entra no elevador. Qual andar voce deseja?",
+                "opcoes":{
+                        "1": "primeiro andar",
+                        "2": "segundo andar",
+                        "3": "terceiro andar",
+                        "4": "quarto andar",
+                        "5": "quinto andar"
+                        }
+                },
+                "1":{
+                    "titulo": "O primeiro andar",
+                    "descricao": "Voce chega no primeiro andar e se incomoda com alguma coisa....",
+                    "opcoes":{
+                            "nerdbox": "Entrar no NerdBox",
+                            "elevador": "Voltar para o elevador"
+                            }
+                    },
+                    "2":{
+                     "titulo": "O segundo andar",
+                     "descricao": "Voce chega no segundo andar e avista o Fernando de GDE",
+                     "opcoes": {
+                             "falar": "Falar com o Fernando",
+                             "elevador": "Voltar para o elevador"
+                             }
+                     },
+                     "3": {
+                      "titulo": "Melhor amigo, pior inimigo",
+                      "descricao": "O seu amigo ou inimigo Fukada acabou hackeando o elevador. Ele esta indisponivel para ir pro terceiro andar",
+                      "opcoes": {
+                              "elevador": "Voltar para o elevador"
+                              }
+                      },
+                      "4": {
+                              "titulo": "Melhor amigo, pior inimigo",
+                              "descricao": "O seu amigo ou inimigo Fukada acabou hackeando o elevador. Ele esta indisponivel para ir pro terceiro andar",
+                      "opcoes": {
+                              "elevador": "Voltar para o elevador"
+                              }
+                      },
+                      "5": {
+                              "titulo": "O refeitorio",
+                              "descricao": "Voce acaba de chegar no restaurante e acha um arduino (nao se sabe porque esta lá). Voce recebeu o arduino!",
+                              "opcoes":{
+                                      "ficar": "Voce irá para as salas das entidades"
+                                      }
+                      },
+                      "ficar": {
+                              "titulo": "Os ninjas assassinos",
+                              "descricao": "Voce esta andando pelas salas das entidades e se sente vigiado. Não tinha ninguem la apenas voce, era o que vc achava. Do nada surge um ninja veterano te desafiando para uma luta",
+                              "opcoes": {
+                                      "lutar": "Lutar com o ninja",
+                                      "fugir": "Escapar do ninja"
+                                      }
+                              }
                 }
         
            
@@ -167,8 +221,7 @@ def main():
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
 
-        # Aluno A: substitua este comentário pelo código para imprimir
-        # o cenário atual.
+        
         for v in cenario_atual.values():
             print(v)
 
@@ -179,6 +232,9 @@ def main():
         else:
             
             escolha = input("Escolha uma opcao \n")
+            while escolha not in cenarios:
+                print ("lugar invalido")
+                escolha = input("Escolha uma opcao \n")
 
             if escolha in opcoes:
                 nome_cenario_atual = escolha
@@ -192,10 +248,16 @@ def main():
             inventario.append('livro, O Golem')
         if escolha == "lutar1":
             inventario.append("protótipo final")
+        if escolha == "5":
+            inventario.append("arduino")
+        if escolha == "disfarce":
+            inventario.append("Protótipo")
             
         if escolha == "lutar1":            
             batalha()
         if escolha == "lutar2":
+            batalha()
+        if escolha == "ficar":
             batalha()
 
 # Programa principal.
