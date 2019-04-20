@@ -172,13 +172,13 @@ inventario = []
 def batalha():
     vida_do_inimigo  = 100
     sua_vida = 100
-    print ('Vida do inimigo" = 100')
-    print ("Sua vida")
+    print ('Vida do inimigo é {0}".format(vida_do_inimigo))
+    print ("Sua vida é {0}.format(sua_vida)")
     print ("A new foe has appeard")
     
     while vida_do_inimigo > 0:
-        golpes = input("O que deseja fazer: Jogar um chinelo (#entre 5 a 15 de vida), Dialogo (#entre 10 e 12), Usar um item, Cabecada (#entre 20 e 30)")# a ser desenvolvido
-        if golpes =="Jogar um chinelo":
+        golpes = input("O que deseja fazer: Jogar um chinelo (entre 5 a 15 de dano), Dialogo (entre 10 e 12 de dano), Usar item, Cabecada (entre 20 e 30 de dano)")
+        if golpes == "Jogar um chinelo":
             import random
             n = random.randint(5, 15)
             dano = n
@@ -214,8 +214,13 @@ def batalha():
            
         if vida_do_inimigo <= 0:
             print ("Parabens voce derrotou o professor!!!")
-    while vida_do_inimigo > 0:
-        sua_vida -= 10#random entre 10 a 20
+
+        n = random.randint(10, 40)
+        dano = n
+        if dano == 0:
+            print("O golpe do oponente não foi efetivo!")
+        else: sua_vida -= dano
+        print (sua_vida)
         print ("O inimigo te bateu!. Sua vida é {0}".format(sua_vida))
         
             
@@ -267,13 +272,11 @@ def main():
             inventario.append('livro, O Golem')
         if escolha == "lutar1":
             inventario.append("protótipo final")
+            batalha()
         if escolha == "5":
             inventario.append("arduino")
         if escolha == "disfarce":
             inventario.append("Protótipo")
-            
-        if escolha == "lutar1":            
-            batalha()
         if escolha == "lutar2":
             batalha()
         if escolha == "ficar":
