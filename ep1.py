@@ -80,7 +80,7 @@ def carregar_cenarios():
                     },           
         "voltar": {
                 "titulo": "Pego de surpresa",
-                "descricao" : "Voce tentou fugir da sala mas o professor te pegou!. LUTE COM ELE!!(obs: nao lute com seu professor isso é so um joguinho ;)",
+                "descricao" : "Você tentou fugir da sala mas o professor te pegou!. LUTE COM ELE!!(obs: nao lute com seu professor isso é so um joguinho ;)",
                 "opcoes": {
                         "lutar1": "lute com o professor"
             }
