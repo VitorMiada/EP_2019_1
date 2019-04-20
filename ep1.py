@@ -2,7 +2,7 @@
 # Alunos:
 # - aluno Vitor Kenzo Fujiwara Miada, sophiaks@al.insper.edu.br
 # - aluno B: Sophia Kerber Shigueoka, vitorkfm@al.insper.edu.br
-
+import random
 
 def carregar_cenarios():
     cenarios = {
@@ -204,35 +204,37 @@ inventario = []
 def batalha():
     vida_do_inimigo  = 100
     sua_vida = 100
-    print (vida_do_inimigo)
-    print (sua_vida)
+    print ("Vida do inimigo: {0}".format(vida_do_inimigo))
+    print ("Sua vida: {0}".format(sua_vida))
     print ("A new foe has appeard")
     
     while vida_do_inimigo > 0:
-        golpes = input("O que deseja fazer: Jogar um chinelo (#entre 5 a 15 de vida), Dialogo (#entre 10 e 12), Usar um item, Cabecada (#entre 20 e 30)")# a ser desenvolvido
+        golpes = input("O que deseja fazer: Jogar um chinelo (entre 5 a 15 de dano) \n Dialogo (entre 10 e 12 de dano) \n Usar um item \n Cabecada (entre 20 e 30 de dano)")
         if golpes == "Jogar um chinelo":
-            vida_do_inimigo-=10#random
-            
+            n = random.randint(5,15)
+            dano = n
+            vida_do_inimigo -= dano
+            print("Vida do inimigo: {0}".format(vida_do_inimigo))
         if golpes == "Dialogo":
-            vida_do_inimigo -=11
-        
-
-        
+            n = random.randint(10,12)
+            dano = n
+            vida_do_inimigo -= dano
+            print("Vida do inimigo: {0}".format(vida_do_inimigo))
         if golpes == "Cabecada":
-            vida_do_inimigo -=25#random
-        print (vida_do_inimigo)
-        
-           
+            n = random.randint(5,15)
+            dano = n
+            vida_do_inimigo -= dano
+            print("Vida do inimigo: {0}".format(vida_do_inimigo))
         if vida_do_inimigo <= 0:
-            print ("Parabens voce derrotou o professor!!!")
-    while vida_do_inimigo > 0:
-        sua_vida -= 10#random entre 10 a 20
-        print ("O inimigo te bateu!. Sua vida é" (sua_vida))
-        
-            
-        
-
-
+            print ("Parabéns, você derrotou o professor!!!")
+            print("Sua vida: {0}".format(sua_vida))
+        if vida_do_inimigo < 70:
+            a = random.randint(1,2)
+            if a == 2:
+                n = random.randint(70, 90)
+                dano = n
+                sua_vida -= dano
+                print ("O inimigo te bateu!. Sua vida é {0}".format(sua_vida))
 def main():
     print("Na hora do sufoco!")
     print("------------------")
