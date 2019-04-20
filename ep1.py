@@ -1,5 +1,4 @@
-# EP 2019-1: Escape Insper
-#
+
 # Alunos:
 # - aluno Vitor Kenzo Fujiwara Miada, sophiaks@al.insper.edu.br
 # - aluno B: Sophia Kerber Shigueoka, vitorkfm@al.insper.edu.br
@@ -32,7 +31,7 @@ def carregar_cenarios():
         },
         "biblioteca": {
             "titulo": "Caverna da tranquilidade",
-            "descricao": "Voce esta na biblioteca. Voce vai falar com a bibliotecaria e ela misteriosamente diz: It's dangerous to come alone, TAKE THIS!!. Voce recebeu o livro O golem",
+            "descricao": "Voce esta na biblioteca",
             "opcoes": {
                 "inicio": "Voltar para o saguao de entrada"
             }
@@ -57,34 +56,25 @@ def main():
     cenarios, nome_cenario_atual = carregar_cenarios()
 
     game_over = False
-    if not game_over:
+    while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
 
-        # Aluno A: substitua este comentário pelo código para imprimir
-        # o cenário atual.
-        for v in cenarios["inicio"].values():
+        for v in cenario_atual.values():
             print(v)
 
-        opcoes = cenario_atual['opcoes']
+        opcoes = cenario_atual["opcoes"]
         if len(opcoes) == 0:
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
             game_over = True
         else:
-            
-            escolha = input("Escolha ir para o andar do professor ou para a biblioteca   \n")
-
+            escolha = input("Escolha uma das opções \n")
             if escolha in opcoes:
                 nome_cenario_atual = escolha
-                for v in cenarios[nome_cenario_atual].values():
-                    print(v)
             else:
                 print("Sua indecisão foi sua ruína!")
                 game_over = True
-                print("Você morreu!")
-
+    print("Você morreu!")
 
 # Programa principal.
 if __name__ == "__main__":
     main()
-
-# teste:só pra ver se é este arquivo mesmo!
