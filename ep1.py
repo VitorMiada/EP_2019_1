@@ -31,12 +31,17 @@ def carregar_cenarios():
         },
         "biblioteca": {
             "titulo": "Caverna da tranquilidade",
-            "descricao": "Voce esta na biblioteca",
+            "descricao": "Voce esta na biblioteca. Voce vai falar com a bibliotecaria e ela misteriosamente diz: It's dangerous to come alone, TAKE THIS!!. Voce recebeu o livro O golem ",
             "opcoes": {
-                "inicio": "Voltar para o saguao de entrada"
+                "inicio": "Voltar para o saguao de entrada",
+                "aquario": "Pegar um aquario"
             }
-        }
-    }
+        },
+        "aquario": {
+            "titulo": "Sala do sonho",
+            "descricao": "Voce entrou em um aquario e acabou pegando no sono tendo um sonho no qual nao era possivel sair dele sem responder a grande pergunta:",
+            }
+        }    
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 
@@ -59,21 +64,27 @@ def main():
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
 
+        # Aluno A: substitua este comentário pelo código para imprimir
+        # o cenário atual.
         for v in cenario_atual.values():
             print(v)
 
-        opcoes = cenario_atual["opcoes"]
+        opcoes = cenario_atual['opcoes']
         if len(opcoes) == 0:
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
             game_over = True
         else:
-            escolha = input("Escolha uma das opções \n")
+            
+            escolha = input("Escolha uma opcao \n")
+
             if escolha in opcoes:
                 nome_cenario_atual = escolha
+                
             else:
                 print("Sua indecisão foi sua ruína!")
                 game_over = True
-    print("Você morreu!")
+                print("Você morreu!")
+
 
 # Programa principal.
 if __name__ == "__main__":
