@@ -49,21 +49,35 @@ def carregar_cenarios():
         },
         "s": {
             "titulo": "Sebastião Camargo",
-            "descricao": "Você acorda na frente da sala Sebastião Camargo. Ihh! Você entrou no meio de uma aula do sétimo semestre de economia.",
+            "descricao": "Você acorda na frente da sala Sebastião Camargo e entra nela. Ihh! Você entrou no meio de uma aula de NatDes.",
             "opcoes": {
                 "voltar": "Sair de fininho e fingir que nada aconteceu",
-                "disfarce": "Colocar sua fantasia de economista e fingir que você pertence ao grupo",
-                "ousadia": "Falar que você é da GV e veio fazer uma consultoria"
+                "disfarce": "Colocar o seu protótipo na cabeça e sair da sala",
+                "ousadia": "Falar que você é o verdadeiro Vitor Macul"
             }
         },
         "n": {
             "titulo": "L3",
             "descricao" : "Você acorda no L3. Os fornos para calibrar sua termorresistência estão todos nas bancadas.",
-            "opcoUes": {
+            "opcoes": {
                 "exemplar": "Ser um bom aluno e acabar seu relatório",
                 "desonesto": "Descalibrar todos os fornos"
             }    
         },
+        "exemplar": {
+                   "titulo": "Parceria com o Carlinhos",
+                   "descricao": "Voce fez prefeitamente seu relatorio. Ao explicar sua situação ao Carlos, ele te ajuda, dando uma termorresistência. Voce voltou para o saguão. ",
+                   "opcoes": {
+                        "inicio": "Voltar para o saguão de entrada"
+                    }
+                 },
+        "desonesto": {
+                    "titulo": "O rei mago de InstruMed",
+                    "descricao": "Ao descalibrar todos dos fornos, o Mago Carlinhos te desafia para um duelo.",
+                    "opcoes":{
+                            "lutar2": "Lute com o Rei Mago!!"
+                            }
+                    },           
         "voltar": {
                 "titulo": "Pego de surpresa",
                 "descricao" : "Voce tentou fugir da sala mas o professor te pegou!. LUTE COM ELE!!(obs: nao lute com seu professor isso é so um joguinho ;)",
@@ -72,6 +86,20 @@ def carregar_cenarios():
             }
                        
         },
+        "disfarce": {
+                   "titulo": "O mestre do disfarce",
+                   "descricao": "Ao colocar seu protótipo na cabeça, voce percbe que ele serve como uma capa de invisibilidade. Voce ganhou o Protótipo. Voce volta para o saguão.",
+                   "opcoes":{
+                           "inicio": "Voltar para o saguão de entrada"
+                           }
+                   },
+        "ousadia": {
+                "titulo": " Not so ousado",
+                "descricao": "Ao dizer que voce era o verdadeiro Vitor Macul, todos riem e o verdadeiro Vitor Macul te expulsa da aula. Voce retornou para o saguão.",
+                "opcoes":{
+                        "inicio": "Voltar para o saguão de entrada"
+                        }
+                },
         "lutar1" :{
                 "titulo":" De volta ao saguão",
                 "descricao" : "Após a luta voce retorna ao saguão e descobre outro caminho.",
@@ -158,9 +186,11 @@ def main():
         if escolha  == "biblioteca":
             inventario.append('livro, O Golem')
         if escolha == "lutar1":
-            inventario.append("Termorresistencia")
+            inventario.append("protótipo final")
             
         if escolha == "lutar1":            
+            batalha()
+        if escolha == "lutar2":
             batalha()
 
 # Programa principal.
