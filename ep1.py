@@ -73,10 +73,10 @@ def carregar_cenarios():
                     "titulo": "\nO rei mago de InstruMed",
                     "descricao": "Ao descalibrar todos dos fornos, o Mago Carlinhos te desafia para um duelo.",
                     "opcoes":{
-                            "lutar2": "Lute com o Rei Mago!!"
+                            "lutar1": "Lute com o Rei Mago!!"
                             }
                     },
-                    "lutar2":{
+                    "lutar":{
                             "titulo": "\nIda ao elevador",
                             "descricao": "Apás a luta você vai para o elevador",
                             "opcoes":{
@@ -167,7 +167,7 @@ def carregar_cenarios():
                       },
                       "5": {
                               "titulo": "\nO refeitorio",
-                              "descricao": "Você acabou de chegar no restaurante e acha um arduíno (não se sabe porque está lá). Você recebeu o arduino!",
+                              "descricao": "Você acabou de chegar no restaurante e acha um arduíno (não se sabe porque está lá). Você recebeu o arduino!\n Também come um salgado e recupera toda sua vida.",
                               "opcoes":{
                                       "ficar": "Voce irá para as salas das entidades"
                                       }
@@ -191,7 +191,7 @@ def carregar_cenarios():
                               "titulo": "\nHonra do ninja",
                               "descricao":"Após vencer o ninja, ele o leva para o covil do Raul. \n Agora você precisa enfrentar os golens!!",
                               "opcoes": {
-                                      "lutar4": "Lutar contra os golens"
+                                      "lutar": "Lutar contra os golens"
                                       }
                               }        
                 }
@@ -200,40 +200,100 @@ def carregar_cenarios():
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 inventario = []
-def batalha():
-    vida_do_inimigo  = 100
-    sua_vida = 100
+def batalha(vida_do_inimigo, sua_vida):
     print ("\nVida do inimigo: {0}".format(vida_do_inimigo))
     print ("Sua vida: {0}".format(sua_vida))
     print ("\nA NEW FOE HAS APPEARED")
     
-    while vida_do_inimigo > 0:
-        golpes = input("O que deseja fazer: Jogar um chinelo (entre 5 a 15 de dano) \n Dialogo (entre 10 e 12 de dano) \n Usar um item \n Cabecada (entre 20 e 30 de dano)")
+    while vida_do_inimigo > 0 and sua_vida > 0:
+        golpes = input("O que deseja fazer: Jogar um chinelo (entre 20 a 35 de dano) \n Dialogo (depende das suas habilidades persuasivas) \n Usar item \n Cabecada (entre 20 e 30 de dano)\n")
         if golpes == "Jogar um chinelo":
-            n = random.randint(5,15)
+            n = random.randint(20,35)
             dano = n
             vida_do_inimigo -= dano
-            print("Vida do inimigo: {0}".format(vida_do_inimigo))
-        if golpes == "Dialogo":
-            n = random.randint(10,12)
-            dano = n
-            vida_do_inimigo -= dano
-            print("Vida do inimigo: {0}".format(vida_do_inimigo))
-        if golpes == "Cabecada":
-            n = random.randint(5,15)
-            dano = n
-            vida_do_inimigo -= dano
-            print("Vida do inimigo: {0}".format(vida_do_inimigo))
-        if vida_do_inimigo <= 0:
-            print ("Parabéns, você derrotou o professor!!!")
+            print("\nVida do inimigo: {0}".format(vida_do_inimigo))
             print("Sua vida: {0}".format(sua_vida))
-        if vida_do_inimigo < 70:
-            a = random.randint(1,2)
-            if a == 2:
-                n = random.randint(70, 90)
-                dano = n
-                sua_vida -= dano
-                print ("O inimigo te bateu!. Sua vida é {0}".format(sua_vida))
+           
+            if vida_do_inimigo < 70:
+                a = random.randint(1,2)
+                if a == 2:
+                    n = random.randint(10, 50)
+                    dano = n
+                    sua_vida -= dano
+                    print ("O inimigo te bateu!. Sua vida agora é {0}".format(sua_vida))
+            if vida_do_inimigo <= 0:
+                print ("Parabéns, você derrotou seu oponente!!!")
+                print("Sua vida: {0}".format(sua_vida))
+                
+            if sua_vida <= 0:
+                print ("Você morreu!")
+                
+        if golpes == "Usar item":
+            print(inventario)
+            a = input("Que item você quer usar?\n")
+            if a == 'arduino':
+                print("\nO arduino só pode ser utilizado uma vez")
+                b = input("\nVocê tem certeza que quer utilizá-la? (responda sim ou nao)")
+                if b == 'sim':
+                    print("\nVocê usou a porta de 5V para recuperar sua vida!")
+                    del inventario[arduino]
+                    sua_vida = 100
+                elif b == 'não':
+                    print("\nEscolha outro item")
+            if a == 'livro O Golem':
+                print("\nO livro do Golem não foi efetivo")
+            if a == 'termorresistencia':
+                print("\nA termorresistência só pode ser utilizada uma vez")
+                c = input("\nVocê tem certeza que quer utilizá-la? (responda sim ou nao)")
+                if c == 'sim':
+                    print("Você usou o fio da sua termorresistência para imobilizar seu inimigo e ganhou a batalha")
+                    del inventario[termorresistencia]
+                if c == 'nao':
+                    print(inventario)
+                else:
+                    print("Escolha inválida")
+            
+            
+        if golpes == "Dialogo":
+            n = random.randint(0, 70)
+            dano = n
+            vida_do_inimigo -= dano
+            print("\nVida do inimigo: {0}".format(vida_do_inimigo))
+            print("Sua vida: {0}".format(sua_vida))
+            
+            if vida_do_inimigo < 70:
+                a = random.randint(1,2)
+                if a == 2:
+                    n = random.randint(10, 30)
+                    dano = n
+                    sua_vida -= dano
+                    print ("O inimigo te bateu!. Sua vida agora é {0}".format(sua_vida))
+            if vida_do_inimigo <= 0:
+                print ("Parabéns, você derrotou seu oponente!!!")
+                print("Sua vida: {0}".format(sua_vida))
+               
+            if sua_vida <= 0:
+                print ("Você morreu!")
+        if golpes == "Cabecada":
+            n = random.randint(20, 30)
+            dano = n
+            vida_do_inimigo -= dano
+            print("\nVida do inimigo: {0}".format(vida_do_inimigo))
+            print("Sua vida: {0}".format(sua_vida))
+            vida_atualizada = sua_vida
+            if vida_do_inimigo < 70:
+                a = random.randint(1,2)
+                if a == 2:
+                    n = random.randint(10, 30)
+                    dano = n
+                    sua_vida -= dano
+                    print ("O inimigo te bateu!. Sua vida agora é {0}".format(sua_vida))
+            if vida_do_inimigo <= 0:
+                print ("Parabéns, você derrotou seu oponente!!!")
+                print("Sua vida após a luta: {0}".format(sua_vida))
+            
+            if sua_vida <= 0:
+                print ("Você morreu!\nSe você souber o nome de alguma sala no Insper, é possível se teletransportar e voltar a jogar.\nCaso o contrário, você perdeu!")
 def main():
     print("Na hora do sufoco!")
     print("------------------")
@@ -276,7 +336,7 @@ def main():
                 game_over = True
                 print("Você morreu!")
         if escolha  == "biblioteca":
-            inventario.append('livro, O Golem')
+            inventario.append('livro O Golem')
         if escolha == "5":
             inventario.append("arduino")
         if escolha == "disfarce":
@@ -285,13 +345,9 @@ def main():
             inventario.append("Termorresistencia")
             
         if escolha == "lutar1":            
-            batalha()
-        if escolha == "lutar2":
-            batalha()
+            batalha(100, 100)
         if escolha == "lutar":
-            batalha()
-        if escolha == "lutar4":
-            batalha()
+            batalha(vida_do_inimigo, sua_vida)
 
 # Programa principal.
 if __name__ == "__main__":
