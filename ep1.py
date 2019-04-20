@@ -77,7 +77,18 @@ def carregar_cenarios():
                     "opcoes":{
                             "lutar2": "Lute com o Rei Mago!!"
                             }
-                    },           
+                    },
+                    "lutar2":{
+                            "titulo": "Ida ao elevador",
+                            "descricao": "Apos a luta vc vai para o elevador",
+                            "opcoes":{
+                                    "1": "Primeiro andar",
+                                    "2": "Segundo andar",
+                                    "3": "Terceiro andar",
+                                    "4": "Quarto andar",
+                                    "5": "Quinto andar"
+                                    }
+                            },
         "voltar": {
                 "titulo": "Pego de surpresa",
                 "descricao" : "Voce tentou fugir da sala mas o professor te pegou!. LUTE COM ELE!!(obs: nao lute com seu professor isso é so um joguinho ;)",
@@ -101,7 +112,7 @@ def carregar_cenarios():
                         }
                 },
         "lutar1" :{
-                "titulo":" De volta ao saguão",
+                "titulo":" O elevador",
                 "descricao" : "Após a luta voce vai para o elevador.",
                 "opcoes":{
                         "elevador": "Chamar o elevador" 
@@ -126,6 +137,13 @@ def carregar_cenarios():
                             "elevador": "Voltar para o elevador"
                             }
                     },
+                    "nerdbox":{
+                            "titulo": "A caixa da depressão",
+                            "descricao": "Ao adentrar no NerdBox, voce encontra o Pelicano. Ele diz que ja tentou alterar a data do EP mas falhou mizeravelmente. Porém ele diz acreditar em voce entao ele te deu uma espada",
+                            "opcoes": {
+                                    "elevador": "Ir para o elevador"
+                                    }
+                            },
                     "2":{
                      "titulo": "O segundo andar",
                      "descricao": "Voce chega no segundo andar e avista o Fernando de GDE",
@@ -162,7 +180,14 @@ def carregar_cenarios():
                                       "lutar": "Lutar com o ninja",
                                       "fugir": "Escapar do ninja"
                                       }
-                              }
+                      },
+                      "lutar": {
+                              "titulo": "Honra do ninja",
+                              "descricao":"Após vencer o ninja ele o leva para o covil do Raul. Agora voce precisa enfrentar os golens!!",
+                              "opcoes": {
+                                      "lutar": "Lutar contra os golens"
+                                      }
+                              }        
                 }
         
            
@@ -172,43 +197,22 @@ inventario = []
 def batalha():
     vida_do_inimigo  = 100
     sua_vida = 100
-    print ('Vida do inimigo" = 100')
-    print ("Sua vida")
+    print (vida_do_inimigo)
+    print (sua_vida)
     print ("A new foe has appeard")
     
     while vida_do_inimigo > 0:
         golpes = input("O que deseja fazer: Jogar um chinelo (#entre 5 a 15 de vida), Dialogo (#entre 10 e 12), Usar um item, Cabecada (#entre 20 e 30)")# a ser desenvolvido
-        if golpes =="Jogar um chinelo":
-            import random
-            n = random.randint(5, 15)
-            dano = n
-            if n == 0:
-                print("O golpe não foi efetivo!")
-            vida_do_inimigo -= dano
+        if golpes == "Jogar um chinelo":
+            vida_do_inimigo-=10#random
+            
+        if golpes == "Dialogo":
+            vida_do_inimigo -=11
+        
 
-        if golpes =="Dialogo":
-            n = random.randint(10, 12)
-            dano = n
-            if dano == 0:
-                print("O golpe não foi efetivo!")
-            else: vida_do_inimigo -= dano
-
-        if golpes == "Usar item": 
-            a = 1 ###AJUSTAR
-            b = 1 ###AJUSTAR
-            n = random.randint(a, b)
-            dano = n
-            if dano == 0:
-                print("O golpe não foi efetivo!")
-            else: vida_do_inimigo -= dano
-            print (inventario)
         
         if golpes == "Cabecada":
-            n = random.randint(20, 30)
-            dano = n
-            if dano == 0:
-                print("O golpe não foi efetivo!")
-            else: vida_do_inimigo -= dano
+            vida_do_inimigo -=25#random
         print (vida_do_inimigo)
         
            
@@ -216,7 +220,7 @@ def batalha():
             print ("Parabens voce derrotou o professor!!!")
     while vida_do_inimigo > 0:
         sua_vida -= 10#random entre 10 a 20
-        print ("O inimigo te bateu!. Sua vida é {0}".format(sua_vida))
+        print ("O inimigo te bateu!. Sua vida é" (sua_vida))
         
             
         
@@ -252,7 +256,7 @@ def main():
             
             escolha = input("Escolha uma opcao \n")
             while escolha not in cenarios:
-                print ("lugar invalido")
+                print ("ação invalida")
                 escolha = input("Escolha uma opcao \n")
 
             if escolha in opcoes:
@@ -265,18 +269,18 @@ def main():
                 print("Você morreu!")
         if escolha  == "biblioteca":
             inventario.append('livro, O Golem')
-        if escolha == "lutar1":
-            inventario.append("protótipo final")
         if escolha == "5":
             inventario.append("arduino")
         if escolha == "disfarce":
             inventario.append("Protótipo")
+        if escolha == "exemplar":
+            inventario.append("Termorresistencia")
             
         if escolha == "lutar1":            
             batalha()
         if escolha == "lutar2":
             batalha()
-        if escolha == "ficar":
+        if escolha == "lutar":
             batalha()
 
 # Programa principal.
