@@ -32,7 +32,7 @@ def carregar_cenarios():
         },
         "biblioteca": {
             "titulo": "Caverna da tranquilidade",
-            "descricao": "Voce esta na biblioteca",
+            "descricao": "Voce esta na biblioteca. Voce vai falar com a bibliotecaria e ela misteriosamente diz: It's dangerous to come alone, TAKE THIS!!. Voce recebeu o livro O golem",
             "opcoes": {
                 "inicio": "Voltar para o saguao de entrada"
             }
@@ -57,12 +57,12 @@ def main():
     cenarios, nome_cenario_atual = carregar_cenarios()
 
     game_over = False
-    while not game_over:
+    if not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
 
         # Aluno A: substitua este comentário pelo código para imprimir
         # o cenário atual.
-        for k,v in cenarios["inicio"].items():
+        for v in cenarios["inicio"].values():
             print(v)
 
         opcoes = cenario_atual['opcoes']
@@ -70,20 +70,17 @@ def main():
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
             game_over = True
         else:
-
-            # Aluno B: substitua este comentário e a linha abaixo pelo código
-            # para pedir a escolha do usuário.
+            
             escolha = input("Escolha ir para o andar do professor ou para a biblioteca   \n")
 
             if escolha in opcoes:
                 nome_cenario_atual = escolha
-                for k,v in cenarios[nome_cenario_atual].items():
+                for v in cenarios[nome_cenario_atual].values():
                     print(v)
             else:
                 print("Sua indecisão foi sua ruína!")
                 game_over = True
-
-    print("Você morreu!")
+                print("Você morreu!")
 
 
 # Programa principal.
