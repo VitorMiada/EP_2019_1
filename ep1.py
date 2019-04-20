@@ -47,43 +47,59 @@ def carregar_cenarios():
         },
         "s": {
             "titulo": "Sebastião Camargo",
-            "descricao":  "Você chega na sala Sebastião Camargo. /n Ihh! Você entrou no meio de uma aula do sétimo semestre de economia.",
-        "opções": {
-            "voltar": "Sair de fininho e fingir que nada aconteceu",
-            "disfarce": "Colocar sua fantasia de economista e fingir que você pertence ao grupo",
-            "ousadia": "Falar que você é da GV e veio fazer uma consultoria"
+            "descricao": "Você acorda na frente da sala Sebastião Camargo. /n Ihh! Você entrou no meio de uma aula do sétimo semestre de economia.",
+            "opcoes": {
+                "voltar": "Sair de fininho e fingir que nada aconteceu",
+                "disfarce": "Colocar sua fantasia de economista e fingir que você pertence ao grupo",
+                "ousadia": "Falar que você é da GV e veio fazer uma consultoria"
             }
         },
         "n": {
             "titulo": "L3",
-            "descricao" : "Você chega no L3. Os fornos para calibrar sua termorresistência estão todos nas bancadas.",
-            "opções": {
+            "descricao" : "Você acorda no L3. Os fornos para calibrar sua termorresistência estão todos nas bancadas.",
+            "opcoUes": {
                 "exemplar": "Ser um bom aluno e acabar seu relatório",
                 "desonesto": "Descalibrar todos os fornos"
             }    
+        },
+        "voltar": {
+                "titulo": "Pego de surpresa",
+                "descricao" : "Voce tentou fugir da sala mas o professor te pegou!. LUTE COM ELE!!(obs: nao lute com seu professor isso é so um joguinho ;)",
+                "opcoes": {
+                        "lutar": "lute com o professor"
+            },
+                       
         }
-            }
+        "lutar":{
+                "titulo": }   }
            
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 inventario = []
 def batalha():
-    vida = 100
+    vida  = 100
+    print ('vida = 100')
     print ("A new foe has appeard")
     golpes = input("O que deseja fazer: Jogar um chinelo (#entre 5 a 15 de vida), Dialogo (#entre 10 e 12), Usar um item, Cabecada (#entre 20 e 30)")# a ser desenvolvido
     while vida > 0:
         if golpes =="Jogar um chinelo":
             vida-=10#random
-            print (vida)
+            
         if golpes =="Dialogo":
-            vida -=11#random
-            print (vida)
+            vida -=11
+        
         if golpes == "Usar item":
+            vida -= 10
             print (inventario)# a ser desenvolvido
-            print (vida)
+        
         if golpes == "Cabecada":
             vida -=25#random
-            print (vida)
+        print (vida)
+        golpes = input(" O que deseja fazer: Jogar um chinelo (#entre 5 a 15 de vida), Dialogo (#entre 10 e 12), Usar um item, Cabecada (#entre 20 e 30)")
+           
+        if vida <= "0":
+            print ("Parabens voce derrotou o professor!!!")
+        
             
         
 
@@ -121,12 +137,16 @@ def main():
 
             if escolha in opcoes:
                 nome_cenario_atual = escolha
+
                 
             else:
                 print("Sua indecisão foi sua ruína!")
                 game_over = True
                 print("Você morreu!")
-
+        if escolha  == "biblioteca":
+            inventario.append('livro, O Golem') 
+        if escolha == "lutar":            
+            batalha()
 
 # Programa principal.
 if __name__ == "__main__":
