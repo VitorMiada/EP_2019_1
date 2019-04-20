@@ -181,11 +181,18 @@ def carregar_cenarios():
                                       "fugir": "Escapar do ninja"
                                       }
                       },
+                      "fugir": {
+                              "titulo": "Voce nao escapará!!",
+                              "descricao": "Voce tentou fugir mas ninjas não deixam vc escapar",
+                              "opcoes": {
+                                      "lutar": "Lutar contra o ninja"
+                                      }
+                              },
                       "lutar": {
                               "titulo": "Honra do ninja",
                               "descricao":"Após vencer o ninja ele o leva para o covil do Raul. Agora voce precisa enfrentar os golens!!",
                               "opcoes": {
-                                      "lutar": "Lutar contra os golens"
+                                      "lutar4": "Lutar contra os golens"
                                       }
                               }        
                 }
@@ -281,6 +288,8 @@ def main():
         if escolha == "lutar2":
             batalha()
         if escolha == "lutar":
+            batalha()
+        if escolha == "lutar4":
             batalha()
 
 # Programa principal.
