@@ -35,13 +35,12 @@ def carregar_cenarios():
             "titulo": "Caverna da tranquilidade",
             "descricao": "Voce esta na biblioteca. Voce vai falar com a bibliotecaria e ela misteriosamente diz: It's dangerous to go alone, TAKE THIS!!. Voce recebeu o livro O golem ",
             "opcoes": {
-                
                 "aquario": "Pegar um aquario"
             }
         },
         "aquario": {
             "titulo": "Sala do sonho",
-            "descricao": "Voce entrou em um aquario e acabou pegando no sono tendo um sonho no qual nao era possivel sair dele sem responder a grande pergunta: sim ou não?",
+            "descricao": "Voce entrou em um aquario e acabou pegando no sono, tendo um sonho no qual nao era possivel sair dele sem responder a grande pergunta: sim ou não?",
             "opcoes": {
                 "s": "sim",
                 "n": "nao"
@@ -80,7 +79,7 @@ def carregar_cenarios():
                     },
                     "lutar2":{
                             "titulo": "Ida ao elevador",
-                            "descricao": "Apos a luta vc vai para o elevador",
+                            "descricao": "Apos a luta vc vai para o elevador ou para o aquario recuperar suas energias",
                             "opcoes":{
                                     "1": "Primeiro andar",
                                     "2": "Segundo andar",
@@ -115,7 +114,8 @@ def carregar_cenarios():
                 "titulo":" O elevador",
                 "descricao" : "Após a luta voce vai para o elevador.",
                 "opcoes":{
-                        "elevador": "Chamar o elevador" 
+                        "elevador": "Chamar o elevador",
+                        "aquario": "Voltar pro aquario"
              }
         },
         "elevador": {
