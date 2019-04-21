@@ -3,6 +3,10 @@
 # - aluno B: Sophia Kerber Shigueoka, vitorkfm@al.insper.edu.br
 import random
 
+inventario = {}
+pontos_carisma = {
+    "carisma": 10
+}
 
 def carregar_cenarios():
     cenarios = {
@@ -168,24 +172,81 @@ def carregar_cenarios():
         },
         "5": {
             "titulo": "\nO refeitorio",
-            "descricao": "Você acabou de chegar no restaurante e acha um arduíno (não se sabe porque está lá). Você recebeu o arduino!\n Também come um salgado e recupera toda sua vida.",
+            "descricao": "Você acabou de chegar no restaurante e acha um arduíno (não se sabe porque está lá). Você recebeu o arduino!",
             "opcoes": {
-                "ficar": "Voce irá para as salas das entidades"
+                "entidades": "Você irá para as salas das entidades",
+                "quadra": "Você irá para a quadra"
             }
         },
-        "ficar": {
-            "titulo": "\nOs ninjas assassinos",
-            "descricao": "Você está andando pelas salas das entidades e se sente vigiado. Não tem ninguém lá, apenas você, ou era o que você achava... \n Do nada surge um ninja veterano te desafiando para uma luta",
+        "quadra": {
+            "titulo": "\nRefúgio dos atletas",
+            "descricao": "Você consegue ver que há alguém no meio da quadra \ne que alguém deixou uma bola de futebol perto do portão.",
+                "opcoes":{
+                    "pegar bola": "Você pega a bola de futebol.",
+                    "conversa": "Você se aproxima da pessoa que está no meio da quadra e tenta iniciar uma conversa.",
+                    "5": "Você volta para o quinto andar"
+                }
+        },
+        "conversa": {
+            "título": "\nUm estranho familiar",
+            "descricao": "Ao se aproximar, você percebe que a pessoa está com um computador na mão \n e está fazendo o EP de última hora.",
             "opcoes": {
-                "lutar2": "Lutar com o ninja",
-                "fugir": "Escapar do ninja"
+                "ajuda": "Você decide ser solidário e ajuda a pessoa no EP",
+                "convencer": "Você tenta convencer a pessoa e que o Raul vai adiar a entrega de todos os EPs",
+                "5": "Você deixa a pessoa em paz e volta para o quinto andar"
+            }
+        },
+        "ajuda": {
+            "titulo": "\nTodos no mesmo barco",
+            "descricao": "Você ajuda seu colega. Você ganhou carisma e um aliado!",
+            "opcoes":{
+                "5": "Você volta para o quinto andar."
+            }
+        },
+        "pegar bola": {
+            "título": "\nUma pessoa correta?",
+            "descricao": "Você pega a bola. Pode levá-la para casa ou devolvê-la na atlética.\nA bola foi adicionada ao seu inventário.",
+            "opcoes": {
+                "entidades": "Ir para a sala de entidades"
+            }
+        },
+        "quadra 2": {
+            "titulo": "\nRefúgio dos atletas",
+            "descricao": "Você consegue ver que há alguém no meio da quadra.",
+                "opcoes":{
+                    "conversa": "Você se aproxima da pessoa que está no meio da quadra e tenta iniciar uma conversa.",
+                    "5": "Você volta para o quinto andar"
+                }
+        },
+        "convencer": {
+            "titulo": "\nConfiança",
+            "descricao": "Você tenta convencer a pessoa, mas ela acha que você está mentindo. Você perdeu três pontos de carisma.",
+            "opcoes": {
+                "entidades": "Ir para a sala de entidades"
+            }
+        },
+        "entidades": {
+            "titulo": "\nOs ninjas assassinos",
+            "descricao": "Você está andando pela salas das entidades e se sente vigiado. Não tem ninguém lá, apenas você, ou era o que você achava... \n Do nada surge um ninja veterano te desafiando para uma luta",
+            "opcoes": {
+                "lutar": "Lutar com o ninja",
+                "fugir": "Escapar do ninja",
+                "classy":"Educadamente pedir um segundo para entrar na sala de entidades."
+            }
+        },
+        "classy":{
+            "título": "\nA sala da confusão",
+            "descricao": "Você está na sala das entidades. Há algumas pessoas da atlética.",
+            "opcoes": {
+                "bola": "Você devolve a bola para os membros da atlética.\nParabéns! Você ganhou mais 3 aliados! ",
+                "entidades": "Como prometido, você volta para lutar com o ninja"
             }
         },
         "fugir": {
             "titulo": "\nNão escaparás!!",
             "descricao": "Você tenta fugir mas os ninjas não te deixam escapar",
             "opcoes": {
-                "lutar2": "Lutar contra o ninja"
+                "lutar": "Lutar contra o ninja"
             }
         },
         "lutar": {
@@ -201,10 +262,8 @@ def carregar_cenarios():
     return cenarios, nome_cenario_atual
 
 
-inventario = []
-
-
-def batalha():
+#---Função para batalhas com os professores---#
+def batalha1():
     sua_vida = 100
     vida_do_inimigo = 100
     print("\nVida do inimigo: {0}".format(vida_do_inimigo))
@@ -220,6 +279,7 @@ def batalha():
             print("\nVida do inimigo: {0}".format(vida_do_inimigo))
             print("Sua vida: {0}".format(sua_vida))
 
+            #---Inimigo começa a atacar se tiver menos de 70 de vida---#
             if vida_do_inimigo < 70:
                 a = random.randint(1, 2)
                 if a == 2:
@@ -228,13 +288,14 @@ def batalha():
                     sua_vida -= dano
                     print(
                         "O inimigo te bateu!. Sua vida agora é {0}".format(sua_vida))
+                    
+            #---Derrotou o inimigo---#
             if vida_do_inimigo <= 0:
                 print("Parabéns, você derrotou seu oponente!!!")
                 print("Sua vida: {0}".format(sua_vida))
-
-            if sua_vida <= 0:
-                print("Você morreu!")
-
+                vida_atualizada = sua_vida
+        
+        #---Escolheu item---#
         if golpes == "Usar item":
             print(inventario)
             a = input("Que item você quer usar?\n")
@@ -244,7 +305,7 @@ def batalha():
                     "\nVocê tem certeza que quer utilizá-la? (responda sim ou nao)")
                 if b == 'sim':
                     print("\nVocê usou a porta de 5V para recuperar sua vida!")
-                    del inventario[arduino]
+                    del inventario[arduino] = 0
                     sua_vida = 100
                 elif b == 'não':
                     print("\nEscolha outro item")
@@ -257,19 +318,22 @@ def batalha():
                 if c == 'sim':
                     print(
                         "Você usou o fio da sua termorresistência para imobilizar seu inimigo e ganhou a batalha")
-                    del inventario[termorresistencia]
+                    inventario[termorresistencia] = 0
                 if c == 'nao':
                     print(inventario)
                 else:
                     print("Escolha inválida")
-
+                    
+        #===Escolheu diálogo---#
         if golpes == "Dialogo":
             n = random.randint(0, 70)
             dano = n
             vida_do_inimigo -= dano
             print("\nVida do inimigo: {0}".format(vida_do_inimigo))
             print("Sua vida: {0}".format(sua_vida))
-
+            
+            
+            #---Inimigo começa a atacar se tiver menos de 70 de vida---#
             if vida_do_inimigo < 70:
                 a = random.randint(1, 2)
                 if a == 2:
@@ -278,18 +342,27 @@ def batalha():
                     sua_vida -= dano
                     print(
                         "O inimigo te bateu!. Sua vida agora é {0}".format(sua_vida))
+                    
+            #---Derrotou o oponente---#        
             if vida_do_inimigo <= 0:
                 print("Parabéns, você derrotou seu oponente!!!")
                 print("Sua vida: {0}".format(sua_vida))
-
+                vida_atualizada = sua_vida
+                
+           #---Perdeu o jogo---#     
             if sua_vida <= 0:
                 print("Você morreu!")
+                
+        #===Escolheu cabeçada---#
         if golpes == "Cabecada":
             n = random.randint(20, 30)
             dano = n
             vida_do_inimigo -= dano
             print("\nVida do inimigo: {0}".format(vida_do_inimigo))
             print("Sua vida: {0}".format(sua_vida))
+            
+            
+            #---Inimigo começa a atacar se tiver menos de 70 de vida---#
             if vida_do_inimigo < 70:
                 a = random.randint(1, 2)
                 if a == 2:
@@ -298,13 +371,27 @@ def batalha():
                     sua_vida -= dano
                     print(
                         "O inimigo te bateu!. Sua vida agora é {0}".format(sua_vida))
+                    
+            #---Derrotou o inimigo---#        
             if vida_do_inimigo <= 0:
-                print("Parabéns, você derrotou seu oponente!!!")
+                print("Parabéns, você derrotou o professor!!!")
                 print("Sua vida após a luta: {0}".format(sua_vida))
-
+                vida_atualizada = sua_vida
+                
+                
+            #---Perdeu o jogo---#
             if sua_vida <= 0:
                 print("Você morreu!\nSe você souber o nome de alguma sala no Insper, é possível se teletransportar e voltar a jogar.\nCaso o contrário, você perdeu!")
+                
 
+def batalha2():
+    vida_do_inimigo = 100
+    print("\nVida do inimigo: {0}".format(vida_do_inimigo))
+    print("Sua vida: {0}".format(vida_atualizada))
+    print("\nA NEW FOE HAS APPEARED")
+    while vida_do_inimigo > 0 and sua_vida > 0:
+        golpes = input("O que deseja fazer: jogar chinelo(entre 20 a 35 de dano) \n Dialogo (depende das suas habilidades persuasivas) \n Usar item \n Cabecada (entre 20 e 30 de dano)\n")
+    #####INCOMPLETO
 
 def main():
     print("Na hora do sufoco!")
@@ -346,20 +433,41 @@ def main():
                 game_over = True
                 print("Você morreu!")
         if escolha == "biblioteca":
-            inventario.append('livro O Golem')
+            inventario['livro O Golem'] = 1
         if escolha == "5":
-            inventario.append("arduino")
+            if "arduino" not in inventario:
+                inventario["arduino"] = 1
+            elif "arduino" in inventario:
+                cenarios["5"]["descricao"] = "Você voltou para o restaurante."
         if escolha == "disfarce":
-            inventario.append("Protótipo")
+            if "Prototipo" not in inventario:
+                inventario["Protótipo"] = 1
         if escolha == "exemplar":
-            inventario.append("Termorresistencia")
+            inventario["Termorresistencia"] = 1
+        if escolha == "Oferecer ajuda":
+            inventario["Aliados"] = 1
+        if escolha == "pegar bola":
+            inventario["Bola de futebol"] = 1
+        if escolha == "conversa":
+            for v in pontos_carisma.values():
+                v -= 3
+        if escolha == "classy":
+            for v in pontos_carisma.values():
+                v += 2
+        if escolha == "bola":
+            for v in inventario["Aliados"].values():
+                v += 3
+            for v in pontos_carisma.values():
+                v += 2
+            inventario["Bola de futebol"] = 0
+
 
         if escolha == "lutar1":
-            batalha()
+            batalha1()
         if escolha == "lutar2":
-            batalha()
+            batalha2()
         if escolha == "lutar3":
-            batalha()
+            batalha3()
 
 
 # Programa principal.
