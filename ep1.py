@@ -259,7 +259,6 @@ def carregar_cenarios():
         "lutar5": {
             "titulo": "\nO fim se aproxima...",
             "descricao": "Você consegue ver o Raul",
-            "opcoes":{
                "LUTAR!": "Luta meu!"
            } 
         }
