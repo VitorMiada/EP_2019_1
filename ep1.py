@@ -454,9 +454,9 @@ def main():
         if escolha == "lutar1":
             batalha1()
         if escolha == "lutar2":
-            batalha2()
+            batalha1()
         if escolha == "lutar3":
-            batalha3()
+            batalha1()
 
 # Programa principal.
 if __name__ == "__main__":
