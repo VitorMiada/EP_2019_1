@@ -292,6 +292,7 @@ def batalha1():
             if vida_do_inimigo <= 0:
                 print("Parabéns, você derrotou seu oponente!!!")
                 print("Sua vida: {0}".format(sua_vida))
+                
         
         #---Escolheu item---#
         if golpes == "Usar item":
@@ -321,14 +322,22 @@ def batalha1():
                     print(inventario)
                 else:
                     print("Escolha inválida")
-                    
+               
         #===Escolheu diálogo---#
         if golpes == "Dialogo":
-            n = random.randint(0, 70)
-            dano = n
-            vida_do_inimigo -= dano
-            print("\nVida do inimigo: {0}".format(vida_do_inimigo))
-            print("Sua vida: {0}".format(sua_vida))
+            if pontos_carisma >= 12:
+                n = random.randint(30,40)
+                dano = n
+                vida_do_inimigo -= dano
+                print("\nVida do inimigo: {0}".format(vida_do_inimigo))
+                print("Sua vida: {0}".format(sua_vida))
+            if pontos_carisma < 12:
+                n = random.randint(10,25)
+                dano = n
+                vida_do_inimigo -= dano
+                print("\nVida do inimigo: {0}".format(vida_do_inimigo))
+                print("Sua vida: {0}".format(sua_vida))
+
             
             #---Inimigo começa a atacar se tiver menos de 70 de vida---#
             if vida_do_inimigo < 70:
@@ -337,14 +346,12 @@ def batalha1():
                     n = random.randint(10, 30)
                     dano = n
                     sua_vida -= dano
-                    print(
-                        "O inimigo te bateu!. Sua vida agora é {0}".format(sua_vida))
+                    print("O inimigo te bateu!. Sua vida agora é {0}".format(sua_vida))
                     
             #---Derrotou o oponente---#        
             if vida_do_inimigo <= 0:
                 print("Parabéns, você derrotou seu oponente!!!")
                 print("Sua vida: {0}".format(sua_vida))
-                
            #---Perdeu o jogo---#     
             if sua_vida <= 0:
                 print("Você morreu!")
@@ -370,34 +377,10 @@ def batalha1():
             #---Derrotou o inimigo---#        
             if vida_do_inimigo <= 0:
                 print("Parabéns, você derrotou o professor!!!")
-                print("Sua vida após a luta: {0}".format(sua_vida))
-                
-                
+                print("Sua vida: {0}".format(sua_vida))
             #---Perdeu o jogo---#
             if sua_vida <= 0:
                 print("Você morreu!\nSe você souber o nome de alguma sala no Insper, é possível se teletransportar e voltar a jogar.\nCaso o contrário, você perdeu!")
-                
-
-def batalha2():
-    vida_do_inimigo = 100
-    sua_vida = 100
-    print("\nVida do inimigo: {0}".format(vida_do_inimigo))
-    print("Sua vida: {0}".format(sua_vida))
-    print("\nA NEW FOE HAS APPEARED")
-    while vida_do_inimigo > 0 and sua_vida > 0:
-        golpes = input("O que deseja fazer: jogar chinelo(entre 20 a 35 de dano) \n Dialogo (depende das suas habilidades persuasivas) \n Usar item \n Cabecada (entre 20 e 30 de dano)\n")
-    #####INCOMPLETO
-
-def batalha3():
-    vida_do_inimigo = 100
-    vida_do_inimigo = 100
-    sua_vida = 100
-    print("\nVida do inimigo: {0}".format(vida_do_inimigo))
-    print("Sua vida: {0}".format(sua_vida))
-    print("\nA NEW FOE HAS APPEARED")
-    while vida_do_inimigo > 0 and sua_vida > 0:
-        golpes2 = input("O que deseja fazer: jogar chinelo(entre 20 a 35 de dano) \n Dialogo (depende das suas habilidades persuasivas) \n Usar item \n Cabecada (entre 20 e 30 de dano)\n")
-            
 
 
 def main():
@@ -468,15 +451,12 @@ def main():
                 v += 2
             inventario["Bola de futebol"] = 0
 
-
         if escolha == "lutar1":
             batalha1()
         if escolha == "lutar2":
             batalha2()
         if escolha == "lutar3":
             batalha3()
-
-
 
 # Programa principal.
 if __name__ == "__main__":
