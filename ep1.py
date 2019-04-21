@@ -78,7 +78,7 @@ def carregar_cenarios():
             "titulo": "\nO rei mago de InstruMed",
             "descricao": "Ao descalibrar todos dos fornos, o Mago Carlinhos te desafia para um duelo.",
             "opcoes": {
-                "lutar1": "Lute com o Rei Mago!!"
+                "lutar2": "Lute com o Rei Mago!!"
             }
         },
         "lutar1": {
@@ -249,12 +249,19 @@ def carregar_cenarios():
                 "lutar4": "Lutar contra o ninja"
             }
         },
-        "lutar5": {
+        "lutar4": {
             "titulo": "\nHonra do ninja",
             "descricao": "Após vencer o ninja, ele o leva para o covil do Raul. \n Agora você precisa enfrentar os golens!!",
             "opcoes": {
-                "lutar3": "Lutar contra os golens"
+                "lutar5": "Lutar contra os golens"
             }
+        },
+        "lutar5": {
+            "titulo": "\nO fim se aproxima...",
+            "descricao": "Você consegue ver o Raul",
+            "opcoes":{
+               "LUTAR!": "Luta meu!"
+           } 
         }
     }
 
