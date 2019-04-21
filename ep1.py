@@ -81,7 +81,7 @@ def carregar_cenarios():
                 "lutar1": "Lute com o Rei Mago!!"
             }
         },
-        "lutar": {
+        "lutar1": {
             "titulo": "\nIda ao elevador",
             "descricao": "Apás a luta você vai para o elevador",
             "opcoes": {
@@ -114,7 +114,7 @@ def carregar_cenarios():
                 "s": "Voltar para voltar pra frente da sala"
             }
         },
-        "lutar1": {
+        "lutar2": {
             "titulo": "\nO elevador",
             "descricao": "Após a luta você vai para o elevador.",
             "opcoes": {
@@ -152,8 +152,8 @@ def carregar_cenarios():
             "titulo": "\nO segundo andar",
             "descricao": "Você chega no segundo andar e avista o Fernando de GDE",
             "opcoes": {
-                         "falar": "Falar com o Fernando",
-                         "elevador": "Voltar para o elevador"
+                    "falar": "Falar com o Fernando",
+                    "elevador": "Voltar para o elevador"
             }
         },
         "3": {
@@ -229,7 +229,7 @@ def carregar_cenarios():
             "titulo": "\nOs ninjas assassinos",
             "descricao": "Você está andando pela salas das entidades e se sente vigiado. Não tem ninguém lá, apenas você, ou era o que você achava... \n Do nada surge um ninja veterano te desafiando para uma luta",
             "opcoes": {
-                "lutar": "Lutar com o ninja",
+                "lutar3": "Lutar com o ninja",
                 "fugir": "Escapar do ninja",
                 "classy":"Educadamente pedir um segundo para entrar na sala de entidades."
             }
@@ -246,10 +246,10 @@ def carregar_cenarios():
             "titulo": "\nNão escaparás!!",
             "descricao": "Você tenta fugir mas os ninjas não te deixam escapar",
             "opcoes": {
-                "lutar": "Lutar contra o ninja"
+                "lutar4": "Lutar contra o ninja"
             }
         },
-        "lutar": {
+        "lutar5": {
             "titulo": "\nHonra do ninja",
             "descricao": "Após vencer o ninja, ele o leva para o covil do Raul. \n Agora você precisa enfrentar os golens!!",
             "opcoes": {
@@ -260,7 +260,6 @@ def carregar_cenarios():
 
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
-
 
 #---Função para batalhas com os professores---#
 def batalha1():
@@ -288,12 +287,11 @@ def batalha1():
                     sua_vida -= dano
                     print(
                         "O inimigo te bateu!. Sua vida agora é {0}".format(sua_vida))
-                    
+
             #---Derrotou o inimigo---#
             if vida_do_inimigo <= 0:
                 print("Parabéns, você derrotou seu oponente!!!")
                 print("Sua vida: {0}".format(sua_vida))
-                vida_atualizada = sua_vida
         
         #---Escolheu item---#
         if golpes == "Usar item":
@@ -305,7 +303,7 @@ def batalha1():
                     "\nVocê tem certeza que quer utilizá-la? (responda sim ou nao)")
                 if b == 'sim':
                     print("\nVocê usou a porta de 5V para recuperar sua vida!")
-                    del inventario[arduino] = 0
+                    inventario["arduino"] = 0
                     sua_vida = 100
                 elif b == 'não':
                     print("\nEscolha outro item")
@@ -318,7 +316,7 @@ def batalha1():
                 if c == 'sim':
                     print(
                         "Você usou o fio da sua termorresistência para imobilizar seu inimigo e ganhou a batalha")
-                    inventario[termorresistencia] = 0
+                    inventario["termorresistencia"] = 0
                 if c == 'nao':
                     print(inventario)
                 else:
@@ -331,7 +329,6 @@ def batalha1():
             vida_do_inimigo -= dano
             print("\nVida do inimigo: {0}".format(vida_do_inimigo))
             print("Sua vida: {0}".format(sua_vida))
-            
             
             #---Inimigo começa a atacar se tiver menos de 70 de vida---#
             if vida_do_inimigo < 70:
@@ -347,7 +344,6 @@ def batalha1():
             if vida_do_inimigo <= 0:
                 print("Parabéns, você derrotou seu oponente!!!")
                 print("Sua vida: {0}".format(sua_vida))
-                vida_atualizada = sua_vida
                 
            #---Perdeu o jogo---#     
             if sua_vida <= 0:
@@ -360,7 +356,6 @@ def batalha1():
             vida_do_inimigo -= dano
             print("\nVida do inimigo: {0}".format(vida_do_inimigo))
             print("Sua vida: {0}".format(sua_vida))
-            
             
             #---Inimigo começa a atacar se tiver menos de 70 de vida---#
             if vida_do_inimigo < 70:
@@ -376,7 +371,6 @@ def batalha1():
             if vida_do_inimigo <= 0:
                 print("Parabéns, você derrotou o professor!!!")
                 print("Sua vida após a luta: {0}".format(sua_vida))
-                vida_atualizada = sua_vida
                 
                 
             #---Perdeu o jogo---#
@@ -386,12 +380,25 @@ def batalha1():
 
 def batalha2():
     vida_do_inimigo = 100
+    sua_vida = 100
     print("\nVida do inimigo: {0}".format(vida_do_inimigo))
-    print("Sua vida: {0}".format(vida_atualizada))
+    print("Sua vida: {0}".format(sua_vida))
     print("\nA NEW FOE HAS APPEARED")
     while vida_do_inimigo > 0 and sua_vida > 0:
         golpes = input("O que deseja fazer: jogar chinelo(entre 20 a 35 de dano) \n Dialogo (depende das suas habilidades persuasivas) \n Usar item \n Cabecada (entre 20 e 30 de dano)\n")
     #####INCOMPLETO
+
+def batalha3():
+    vida_do_inimigo = 100
+    vida_do_inimigo = 100
+    sua_vida = 100
+    print("\nVida do inimigo: {0}".format(vida_do_inimigo))
+    print("Sua vida: {0}".format(sua_vida))
+    print("\nA NEW FOE HAS APPEARED")
+    while vida_do_inimigo > 0 and sua_vida > 0:
+        golpes2 = input("O que deseja fazer: jogar chinelo(entre 20 a 35 de dano) \n Dialogo (depende das suas habilidades persuasivas) \n Usar item \n Cabecada (entre 20 e 30 de dano)\n")
+            
+
 
 def main():
     print("Na hora do sufoco!")
@@ -468,6 +475,7 @@ def main():
             batalha2()
         if escolha == "lutar3":
             batalha3()
+
 
 
 # Programa principal.
