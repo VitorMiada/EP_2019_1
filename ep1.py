@@ -3,6 +3,7 @@
 # - aluno B: Sophia Kerber Shigueoka, vitorkfm@al.insper.edu.br
 import random
 
+
 def carregar_cenarios():
     cenarios = {
         "inicio": {
@@ -56,184 +57,191 @@ def carregar_cenarios():
         },
         "n": {
             "titulo": "\nL3",
-            "descricao" : "Sua resposta estava errada. O teletransporte é possível! Você acorda no L3. Os fornos para calibrar sua termorresistência estão todos nas bancadas.",
+            "descricao": "Sua resposta estava errada. O teletransporte é possível! Você acorda no L3. Os fornos para calibrar sua termorresistência estão todos nas bancadas.",
             "opcoes": {
                 "exemplar": "Ser um bom aluno e acabar seu relatório",
                 "desonesto": "Descalibrar todos os fornos"
-            }    
+            }
         },
         "exemplar": {
-                   "titulo": "\nParceria com o Carlinhos",
-                   "descricao": "Voce fez perfeitamente seu relatório. Ao explicar sua situação ao Carlos, ele te ajuda, te dando uma termorresistência. Você pega o elevador e vai para o quinto andar. ",
-                   "opcoes": {
-                        "5": "Ir para o quinto andar"
-                    }
-                 },
-        "desonesto": {
-                    "titulo": "\nO rei mago de InstruMed",
-                    "descricao": "Ao descalibrar todos dos fornos, o Mago Carlinhos te desafia para um duelo.",
-                    "opcoes":{
-                            "lutar1": "Lute com o Rei Mago!!"
-                            }
-                    },
-                    "lutar":{
-                            "titulo": "\nIda ao elevador",
-                            "descricao": "Apás a luta você vai para o elevador",
-                            "opcoes":{
-                                    "1": "Primeiro andar",
-                                    "2": "Segundo andar",
-                                    "3": "Terceiro andar",
-                                    "4": "Quarto andar",
-                                    "5": "Quinto andar"
-                                    }
-                            },
-        "voltar": {
-                "titulo": "\nPego de surpresa",
-                "descricao" : "Você tentou fugir da sala mas o professor te pegou! \n LUTE COM ELE! \n(observação: não lute com seu professor, isso é so um joguinho!)",
-                "opcoes": {
-                        "lutar1": "lute com o professor"
+            "titulo": "\nParceria com o Carlinhos",
+            "descricao": "Voce fez perfeitamente seu relatório. Ao explicar sua situação ao Carlos, ele te ajuda, te dando uma termorresistência. Você pega o elevador e vai para o quinto andar. ",
+            "opcoes": {
+                "5": "Ir para o quinto andar"
             }
-                       
+        },
+        "desonesto": {
+            "titulo": "\nO rei mago de InstruMed",
+            "descricao": "Ao descalibrar todos dos fornos, o Mago Carlinhos te desafia para um duelo.",
+            "opcoes": {
+                "lutar1": "Lute com o Rei Mago!!"
+            }
+        },
+        "lutar": {
+            "titulo": "\nIda ao elevador",
+            "descricao": "Apás a luta você vai para o elevador",
+            "opcoes": {
+                "1": "Primeiro andar",
+                "2": "Segundo andar",
+                "3": "Terceiro andar",
+                "4": "Quarto andar",
+                "5": "Quinto andar"
+            }
+        },
+        "voltar": {
+            "titulo": "\nPego de surpresa",
+            "descricao": "Você tentou fugir da sala mas o professor te pegou! \n LUTE COM ELE! \n(observação: não lute com seu professor, isso é so um joguinho!)",
+            "opcoes": {
+                "lutar1": "lute com o professor"
+            }
+
         },
         "disfarce": {
-                   "titulo": "\nO mestre do disfarce",
-                   "descricao": "Ao colocar seu protótipo na cabeça, voce percebe que ele serve como uma capa de invisibilidade. Voce ganhou o Protótipo e foi para o quinto andar.",
-                   "opcoes":{
-                           "5": "Ir para a o quinto andar"
-                           }
-                   },
+            "titulo": "\nO mestre do disfarce",
+            "descricao": "Ao colocar seu protótipo na cabeça, voce percebe que ele serve como uma capa de invisibilidade. Voce ganhou o Protótipo e foi para o quinto andar.",
+            "opcoes": {
+                "5": "Ir para a o quinto andar"
+            }
+        },
         "ousadia": {
-                "titulo": "\nNot so ousado",
-                "descricao": "Ao dizer que você era o verdadeiro Vitor Macul, todos riem e o verdadeiro Vitor Macul te expulsa da aula. \n Você retornou para a frente da sala.",
-                "opcoes":{
-                        "s": "Voltar para voltar pra frente da sala"
-                        }
-                },
-        "lutar1" :{
-                "titulo":"\nO elevador",
-                "descricao" : "Após a luta você vai para o elevador.",
-                "opcoes":{
-                        "elevador": "Chamar o elevador",
-                        "aquario": "Voltar pro aquario"
-             }
+            "titulo": "\nNot so ousado",
+            "descricao": "Ao dizer que você era o verdadeiro Vitor Macul, todos riem e o verdadeiro Vitor Macul te expulsa da aula. \n Você retornou para a frente da sala.",
+            "opcoes": {
+                "s": "Voltar para voltar pra frente da sala"
+            }
+        },
+        "lutar1": {
+            "titulo": "\nO elevador",
+            "descricao": "Após a luta você vai para o elevador.",
+            "opcoes": {
+                "elevador": "Chamar o elevador",
+                "aquario": "Voltar pro aquario"
+            }
         },
         "elevador": {
-                "titulo": "\nO Elevador macabro",
-                "descricao": "Você entra no elevador. Para qual andar você deseja ir?",
-                "opcoes":{
-                        "1": "primeiro andar",
-                        "2": "segundo andar",
-                        "3": "terceiro andar",
-                        "4": "quarto andar",
-                        "5": "quinto andar"
-                        }
-                },
-                "1":{
-                    "titulo": "\nO primeiro andar",
-                    "descricao": "Você chega no primeiro andar e se incomoda com alguma coisa....",
-                    "opcoes":{
-                            "nerdbox": "Entrar no NerdBox",
-                            "elevador": "Voltar para o elevador"
-                            }
-                    },
-                    "nerdbox":{
-                            "titulo": "\nA caixa da depressão",
-                            "descricao": "Ao adentrar no NerdBox, você encontra o Pelicano. Ele diz que ja tentou alterar a data do EP, mas falhou miseravelmente. Porém, diz acreditar em você, e te dá a espada da modelagem",
-                            "opcoes": {
-                                    "elevador": "Ir para o elevador"
-                                    }
-                            },
-                    "2":{
-                     "titulo": "\nO segundo andar",
-                     "descricao": "Você chega no segundo andar e avista o Fernando de GDE",
-                     "opcoes": {
-                             "falar": "Falar com o Fernando",
-                             "elevador": "Voltar para o elevador"
-                             }
-                     },
-                     "3": {
-                      "titulo": "\nMelhor amigo, pior inimigo",
+            "titulo": "\nO Elevador macabro",
+            "descricao": "Você entra no elevador. Para qual andar você deseja ir?",
+            "opcoes": {
+                "1": "primeiro andar",
+                "2": "segundo andar",
+                "3": "terceiro andar",
+                "4": "quarto andar",
+                "5": "quinto andar"
+            }
+        },
+        "1": {
+            "titulo": "\nO primeiro andar",
+            "descricao": "Você chega no primeiro andar e se incomoda com alguma coisa....",
+            "opcoes": {
+                "nerdbox": "Entrar no NerdBox",
+                "elevador": "Voltar para o elevador"
+            }
+        },
+        "nerdbox": {
+            "titulo": "\nA caixa da depressão",
+            "descricao": "Ao adentrar no NerdBox, você encontra o Pelicano. Ele diz que ja tentou alterar a data do EP, mas falhou miseravelmente. Porém, diz acreditar em você, e te dá a espada da modelagem",
+            "opcoes": {
+                "elevador": "Ir para o elevador"
+            }
+        },
+        "2": {
+            "titulo": "\nO segundo andar",
+            "descricao": "Você chega no segundo andar e avista o Fernando de GDE",
+            "opcoes": {
+                         "falar": "Falar com o Fernando",
+                         "elevador": "Voltar para o elevador"
+            }
+        },
+        "3": {
+            "titulo": "\nMelhor amigo, pior inimigo",
                       "descricao": "O seu amigo/inimigo Lucas Fukada acabou hackeando o elevador. Você não pode ir pro terceiro andar",
                       "opcoes": {
-                              "elevador": "Voltar para o elevador"
-                              }
-                      },
-                      "4": {
-                              "titulo": "\nMelhor amigo, pior inimigo",
-                              "descricao": "O seu amigo/inimigo Lucas Fukada acabou hackeando o elevador. Você não pode ir pro quarto andar",
+                          "elevador": "Voltar para o elevador"
+                      }
+        },
+        "4": {
+            "titulo": "\nMelhor amigo, pior inimigo",
+            "descricao": "O seu amigo/inimigo Lucas Fukada acabou hackeando o elevador. Você não pode ir pro quarto andar",
                       "opcoes": {
-                              "elevador": "Voltar para o elevador"
-                              }
-                      },
-                      "5": {
-                              "titulo": "\nO refeitorio",
-                              "descricao": "Você acabou de chegar no restaurante e acha um arduíno (não se sabe porque está lá). Você recebeu o arduino!\n Também come um salgado e recupera toda sua vida.",
-                              "opcoes":{
-                                      "ficar": "Voce irá para as salas das entidades"
-                                      }
-                      },
-                      "ficar": {
-                              "titulo": "\nOs ninjas assassinos",
-                              "descricao": "Você está andando pelas salas das entidades e se sente vigiado. Não tem ninguém lá, apenas você, ou era o que você achava... \n Do nada surge um ninja veterano te desafiando para uma luta",
-                              "opcoes": {
-                                      "lutar": "Lutar com o ninja",
-                                      "fugir": "Escapar do ninja"
-                                      }
-                      },
-                      "fugir": {
-                              "titulo": "\nNão escaparás!!",
-                              "descricao": "Você tenta fugir mas os ninjas não te deixam escapar",
-                              "opcoes": {
-                                      "lutar": "Lutar contra o ninja"
-                                      }
-                              },
-                      "lutar": {
-                              "titulo": "\nHonra do ninja",
-                              "descricao":"Após vencer o ninja, ele o leva para o covil do Raul. \n Agora você precisa enfrentar os golens!!",
-                              "opcoes": {
-                                      "lutar": "Lutar contra os golens"
-                                      }
-                              }        
-                }
-        
-           
+                          "elevador": "Voltar para o elevador"
+                      }
+        },
+        "5": {
+            "titulo": "\nO refeitorio",
+            "descricao": "Você acabou de chegar no restaurante e acha um arduíno (não se sabe porque está lá). Você recebeu o arduino!\n Também come um salgado e recupera toda sua vida.",
+            "opcoes": {
+                "ficar": "Voce irá para as salas das entidades"
+            }
+        },
+        "ficar": {
+            "titulo": "\nOs ninjas assassinos",
+            "descricao": "Você está andando pelas salas das entidades e se sente vigiado. Não tem ninguém lá, apenas você, ou era o que você achava... \n Do nada surge um ninja veterano te desafiando para uma luta",
+            "opcoes": {
+                "lutar2": "Lutar com o ninja",
+                "fugir": "Escapar do ninja"
+            }
+        },
+        "fugir": {
+            "titulo": "\nNão escaparás!!",
+            "descricao": "Você tenta fugir mas os ninjas não te deixam escapar",
+            "opcoes": {
+                "lutar2": "Lutar contra o ninja"
+            }
+        },
+        "lutar": {
+            "titulo": "\nHonra do ninja",
+            "descricao": "Após vencer o ninja, ele o leva para o covil do Raul. \n Agora você precisa enfrentar os golens!!",
+            "opcoes": {
+                "lutar3": "Lutar contra os golens"
+            }
+        }
+    }
+
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
+
+
 inventario = []
-def batalha(vida_do_inimigo, sua_vida):
-    print ("\nVida do inimigo: {0}".format(vida_do_inimigo))
-    print ("Sua vida: {0}".format(sua_vida))
-    print ("\nA NEW FOE HAS APPEARED")
-    
+
+
+def batalha():
+    sua_vida = 100
+    vida_do_inimigo = 100
+    print("\nVida do inimigo: {0}".format(vida_do_inimigo))
+    print("Sua vida: {0}".format(sua_vida))
+    print("\nA NEW FOE HAS APPEARED")
+
     while vida_do_inimigo > 0 and sua_vida > 0:
         golpes = input("O que deseja fazer: Jogar um chinelo (entre 20 a 35 de dano) \n Dialogo (depende das suas habilidades persuasivas) \n Usar item \n Cabecada (entre 20 e 30 de dano)\n")
         if golpes == "Jogar um chinelo":
-            n = random.randint(20,35)
+            n = random.randint(20, 35)
             dano = n
             vida_do_inimigo -= dano
             print("\nVida do inimigo: {0}".format(vida_do_inimigo))
             print("Sua vida: {0}".format(sua_vida))
-           
+
             if vida_do_inimigo < 70:
-                a = random.randint(1,2)
+                a = random.randint(1, 2)
                 if a == 2:
                     n = random.randint(10, 50)
                     dano = n
                     sua_vida -= dano
-                    print ("O inimigo te bateu!. Sua vida agora é {0}".format(sua_vida))
+                    print(
+                        "O inimigo te bateu!. Sua vida agora é {0}".format(sua_vida))
             if vida_do_inimigo <= 0:
-                print ("Parabéns, você derrotou seu oponente!!!")
+                print("Parabéns, você derrotou seu oponente!!!")
                 print("Sua vida: {0}".format(sua_vida))
-                
+
             if sua_vida <= 0:
-                print ("Você morreu!")
-                
+                print("Você morreu!")
+
         if golpes == "Usar item":
             print(inventario)
             a = input("Que item você quer usar?\n")
             if a == 'arduino':
                 print("\nO arduino só pode ser utilizado uma vez")
-                b = input("\nVocê tem certeza que quer utilizá-la? (responda sim ou nao)")
+                b = input(
+                    "\nVocê tem certeza que quer utilizá-la? (responda sim ou nao)")
                 if b == 'sim':
                     print("\nVocê usou a porta de 5V para recuperar sua vida!")
                     del inventario[arduino]
@@ -244,56 +252,60 @@ def batalha(vida_do_inimigo, sua_vida):
                 print("\nO livro do Golem não foi efetivo")
             if a == 'termorresistencia':
                 print("\nA termorresistência só pode ser utilizada uma vez")
-                c = input("\nVocê tem certeza que quer utilizá-la? (responda sim ou nao)")
+                c = input(
+                    "\nVocê tem certeza que quer utilizá-la? (responda sim ou nao)")
                 if c == 'sim':
-                    print("Você usou o fio da sua termorresistência para imobilizar seu inimigo e ganhou a batalha")
+                    print(
+                        "Você usou o fio da sua termorresistência para imobilizar seu inimigo e ganhou a batalha")
                     del inventario[termorresistencia]
                 if c == 'nao':
                     print(inventario)
                 else:
                     print("Escolha inválida")
-            
-            
+
         if golpes == "Dialogo":
             n = random.randint(0, 70)
             dano = n
             vida_do_inimigo -= dano
             print("\nVida do inimigo: {0}".format(vida_do_inimigo))
             print("Sua vida: {0}".format(sua_vida))
-            
+
             if vida_do_inimigo < 70:
-                a = random.randint(1,2)
+                a = random.randint(1, 2)
                 if a == 2:
                     n = random.randint(10, 30)
                     dano = n
                     sua_vida -= dano
-                    print ("O inimigo te bateu!. Sua vida agora é {0}".format(sua_vida))
+                    print(
+                        "O inimigo te bateu!. Sua vida agora é {0}".format(sua_vida))
             if vida_do_inimigo <= 0:
-                print ("Parabéns, você derrotou seu oponente!!!")
+                print("Parabéns, você derrotou seu oponente!!!")
                 print("Sua vida: {0}".format(sua_vida))
-               
+
             if sua_vida <= 0:
-                print ("Você morreu!")
+                print("Você morreu!")
         if golpes == "Cabecada":
             n = random.randint(20, 30)
             dano = n
             vida_do_inimigo -= dano
             print("\nVida do inimigo: {0}".format(vida_do_inimigo))
             print("Sua vida: {0}".format(sua_vida))
-            vida_atualizada = sua_vida
             if vida_do_inimigo < 70:
-                a = random.randint(1,2)
+                a = random.randint(1, 2)
                 if a == 2:
                     n = random.randint(10, 30)
                     dano = n
                     sua_vida -= dano
-                    print ("O inimigo te bateu!. Sua vida agora é {0}".format(sua_vida))
+                    print(
+                        "O inimigo te bateu!. Sua vida agora é {0}".format(sua_vida))
             if vida_do_inimigo <= 0:
-                print ("Parabéns, você derrotou seu oponente!!!")
+                print("Parabéns, você derrotou seu oponente!!!")
                 print("Sua vida após a luta: {0}".format(sua_vida))
-            
+
             if sua_vida <= 0:
-                print ("Você morreu!\nSe você souber o nome de alguma sala no Insper, é possível se teletransportar e voltar a jogar.\nCaso o contrário, você perdeu!")
+                print("Você morreu!\nSe você souber o nome de alguma sala no Insper, é possível se teletransportar e voltar a jogar.\nCaso o contrário, você perdeu!")
+
+
 def main():
     print("Na hora do sufoco!")
     print("------------------")
@@ -312,7 +324,6 @@ def main():
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
 
-        
         for v in cenario_atual.values():
             print(v)
 
@@ -321,21 +332,20 @@ def main():
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
             game_over = True
         else:
-            
+
             escolha = input("Escolha uma opção \n")
             while escolha not in cenarios:
-                print ("\nação inválida")
+                print("\nação inválida")
                 escolha = input("Escolha uma opção \n")
 
             if escolha in opcoes:
                 nome_cenario_atual = escolha
 
-                
             else:
                 print("Sua indecisão foi sua ruína!")
                 game_over = True
                 print("Você morreu!")
-        if escolha  == "biblioteca":
+        if escolha == "biblioteca":
             inventario.append('livro O Golem')
         if escolha == "5":
             inventario.append("arduino")
@@ -343,11 +353,14 @@ def main():
             inventario.append("Protótipo")
         if escolha == "exemplar":
             inventario.append("Termorresistencia")
-            
-        if escolha == "lutar1":            
-            batalha(100, 100)
-        if escolha == "lutar":
-            batalha(vida_do_inimigo, sua_vida)
+
+        if escolha == "lutar1":
+            batalha()
+        if escolha == "lutar2":
+            batalha()
+        if escolha == "lutar3":
+            batalha()
+
 
 # Programa principal.
 if __name__ == "__main__":
