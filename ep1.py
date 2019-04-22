@@ -410,7 +410,9 @@ def batalha1():
             #---Perdeu o jogo---#
             if sua_vida <= 0:
                 print("Você morreu!\nSe você souber o nome de alguma sala no Insper, é possível se teletransportar e voltar a jogar.\nCaso o contrário, você perdeu!")
-
+                a = input("nome da sala")
+                if a in dicsalas:
+                    escolha = a
 
 def main():
     print("Na hora do sufoco!")
