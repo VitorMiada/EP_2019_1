@@ -2,7 +2,6 @@
 # - aluno Vitor Kenzo Fujiwara Miada, sophiaks@al.insper.edu.br
 # - aluno B: Sophia Kerber Shigueoka, vitorkfm@al.insper.edu.br
 import random
-
 inventario = {}
 pontos_carisma = {
     "carisma": 10
@@ -238,8 +237,13 @@ def carregar_cenarios():
             "título": "\nA sala da confusão",
             "descricao": "Você está na sala das entidades. Há algumas pessoas da atlética.",
             "opcoes": {
-                "bola": "Você devolve a bola para os membros da atlética.\nParabéns! Você ganhou mais 3 aliados! ",
+                "bola": "Você devolve a bola para os membros da atlética.",
                 "entidades": "Como prometido, você volta para lutar com o ninja"
+            }
+        },
+        "bola": {
+            "opcoes": {
+                "entidades": "Você volta para sala de entidades"
             }
         },
         "fugir": {
@@ -454,10 +458,15 @@ def main():
         if escolha == "bola":
             for v in inventario["Aliados"].values():
                 v += 3
+            print("Você ganhou mais três aliados!")
             for v in pontos_carisma.values():
                 v += 2
             inventario["Bola de futebol"] = 0
         if escolha == "3":
+            with open('arquivo.txt', 'r') as arquivo:
+                conteudo = arquivo.read()
+                print(conteudo)
+        if escolha == "4":
             with open('arquivo.txt', 'r') as arquivo:
                 conteudo = arquivo.read()
                 print(conteudo)
