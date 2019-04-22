@@ -9,7 +9,7 @@ pontos_carisma = {
 }
 aliados = []
 #----JSON----#
-with open('jsonv2.txt','r') as arquivo:
+with open('jsonfinal.txt','r') as arquivo:
    conteudo = arquivo.read()
    dicsalas = json.loads(conteudo)
 
@@ -34,8 +34,8 @@ def carregar_cenarios():
         },
         "professor": {
             "titulo": "\nO guardião",
-            "descricao": "Você foi até a porta da sala do professor, porém existem golens guardiões ligados a uma protoboard. "
-                         "Você vai falar com o golem. Ele te empurra para trás e não te deixa entrar na sala "
+            "descricao": "Você foi até a porta da sala do professor, porém o golem guardião Raul programado em arduino, ligado a uma protoboard. "
+                         "Você vai falar com o Raul. Ele te empurra para trás e não te deixa entrar na sala "
                          "Você precisa de mais itens.",
             "opcoes": {
                 "inicio": "Voltar para o saguão"
@@ -242,7 +242,7 @@ def carregar_cenarios():
             "titulo": "\nOs ninjas assassinos",
             "descricao": "Você está andando pela salas das entidades e se sente vigiado. Não tem ninguém lá, apenas você, ou era o que você achava... \n Do nada surge um ninja veterano te desafiando para uma luta",
             "opcoes": {
-                "lutar3": "Lutar com o ninja",
+                "lutar4": "Lutar com o ninja",
                 "fugir": "Escapar do ninja",
                 "classy":"Educadamente pedir um segundo para entrar na sala de entidades."
             }
@@ -271,19 +271,13 @@ def carregar_cenarios():
             "titulo": "\nHonra do ninja",
             "descricao": "Após vencer o ninja, ele o leva para o covil do Raul. \n Agora você precisa enfrentar os golens!!",
             "opcoes": {
-                "lutar5": "Lutar contra os golens"
+                "luta final": "Lutar contra o Golem Raul!"
             }
         },
-        "lutar5": {
-            "titulo": "?",
-            "descricao": "?",
-            "opcoes": {
-                "elevador": "Elevador"
-            }
-        },
-        "luta_final": {
+        "luta final": {
             "titulo": "A sobrevivência do mais forte",
-            "descricao": "O RAUL TE ATACA"
+            "descricao": " VOCE CONSEGUIU ADIAR O EP. Mas tambem teve que pagar as contas do hospital do Raul, o processo que receberá do Raul e a suspensão que vc levará :(. Portanto, não bata em seus professores, faça o EP adiantado, comam frutas e bebam agua!",
+                         
         }
     }
 
@@ -519,7 +513,7 @@ def main():
             batalha1()
         if escolha == "lutar4":
             batalha1()
-        if escolha == "luta_final":
+        if escolha == "luta final":
             batalha1()
 
 # Programa principal.
