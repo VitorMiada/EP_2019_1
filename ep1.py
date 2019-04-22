@@ -277,7 +277,7 @@ def batalha1():
     print("\nA NEW FOE HAS APPEARED")
 
     while vida_do_inimigo > 0 and sua_vida > 0:
-        golpes = input("O que deseja fazer: Jogar um chinelo (entre 20 a 35 de dano) \n Dialogo (depende das suas habilidades persuasivas) \n Usar item \n Cabecada (entre 20 e 30 de dano)\n")
+        golpes = input("O que deseja fazer: Jogar um chinelo (entre 20 a 35 de dano) \n Dialogo (depende das suas habilidades persuasivas) \n Usar item \n Cabecada (entre 20 e 30 de dano)\n ")
         if golpes == "Jogar um chinelo":
             n = random.randint(20, 35)
             dano = n
@@ -472,4 +472,3 @@ def main():
 # Programa principal.
 if __name__ == "__main__":
     main()
-
