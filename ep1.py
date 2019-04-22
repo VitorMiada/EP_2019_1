@@ -6,6 +6,7 @@ inventario = {}
 pontos_carisma = {
     "carisma": 10
 }
+aliados = []
 
 def carregar_cenarios():
     cenarios = {
@@ -153,6 +154,13 @@ def carregar_cenarios():
             "opcoes": {
                     "falar": "Falar com o Fernando",
                     "elevador": "Voltar para o elevador"
+            }
+        },
+        "falar": {
+            "titulo": "Humanas na veia",
+            "descricao": "Você fala com o Fernando de GDE. Ele te informa que tentou falar com o Raul sobre o EP\ne para te ajudar, te ensina a ser mais convincente no seu diálogo.\nVocê ganhou 4 pontos de carisma!",
+            "opcoes": {
+                "elevador": "Ir para o elevador"
             }
         },
         "3": {
@@ -336,18 +344,19 @@ def batalha1():
                
         #===Escolheu diálogo---#
         if golpes == "Dialogo":
-            if pontos_carisma >= 12:
-                n = random.randint(30,40)
-                dano = n
-                vida_do_inimigo -= dano
-                print("\nVida do inimigo: {0}".format(vida_do_inimigo))
-                print("Sua vida: {0}".format(sua_vida))
-            if pontos_carisma < 12:
-                n = random.randint(10,25)
-                dano = n
-                vida_do_inimigo -= dano
-                print("\nVida do inimigo: {0}".format(vida_do_inimigo))
-                print("Sua vida: {0}".format(sua_vida))
+            for v in pontos_carisma.values():
+                if v >= 12:
+                    n = random.randint(30,40)
+                    dano = n
+                    vida_do_inimigo -= dano
+                    print("\nVida do inimigo: {0}".format(vida_do_inimigo))
+                    print("Sua vida: {0}".format(sua_vida))
+                if v < 12:
+                    n = random.randint(10,25)
+                    dano = n
+                    vida_do_inimigo -= dano
+                    print("\nVida do inimigo: {0}".format(vida_do_inimigo))
+                    print("Sua vida: {0}".format(sua_vida))
 
             
             #---Inimigo começa a atacar se tiver menos de 70 de vida---#
@@ -379,11 +388,10 @@ def batalha1():
             if vida_do_inimigo < 70:
                 a = random.randint(1, 2)
                 if a == 2:
-                    n = random.randint(10, 30)
+                    n = random.randint(10, 60)
                     dano = n
                     sua_vida -= dano
-                    print(
-                        "O inimigo te bateu!. Sua vida agora é {0}".format(sua_vida))
+                    print("O inimigo te bateu!. Sua vida agora é {0}".format(sua_vida))
                     
             #---Derrotou o inimigo---#        
             if vida_do_inimigo <= 0:
@@ -445,6 +453,7 @@ def main():
                 inventario["Protótipo"] = 1
         if escolha == "exemplar":
             inventario["Termorresistencia"] = 1
+            aliados.append("Carlos")
         if escolha == "Oferecer ajuda":
             inventario["Aliados"] = 1
         if escolha == "pegar bola":
@@ -452,15 +461,21 @@ def main():
         if escolha == "conversa":
             for v in pontos_carisma.values():
                 v -= 3
+                print("Você tem {0} de carisma".format(v))
         if escolha == "classy":
             for v in pontos_carisma.values():
                 v += 2
+                print("Você tem {0} de carisma".format(v))
         if escolha == "bola":
-            for v in inventario["Aliados"].values():
-                v += 3
+            aliados.append("MembrodaAtlética_1")
+            aliados.append("MembrodaAtlética_2")
+            aliados.append("MembrodaAtlética_3")
+            print("Você tem {0} de carisma".format(v))
             print("Você ganhou mais três aliados!")
+            print("Seus aliados: {0}".format(aliados))
             for v in pontos_carisma.values():
                 v += 2
+                print("Você tem {0} de carisma".format(v))
             inventario["Bola de futebol"] = 0
         if escolha == "3":
             with open('arquivo.txt', 'r') as arquivo:
@@ -470,7 +485,19 @@ def main():
             with open('arquivo.txt', 'r') as arquivo:
                 conteudo = arquivo.read()
                 print(conteudo)
+        if escolha == "nerdbox":
+            inventario["Espada da modelagem"] = 1 
+            aliados.append("Pelicano")
+            print("Seus aliados: {0}".format(aliados))
+        if escolha == "falar":
+            for v in pontos_carisma.values():
+                v += 2
+                print("Você tem {0} de carisma".format(v))
+        if escolha == "ajuda":
+            aliados.append("Amigo do EP")
+            print("Seus aliados: {0}".format(aliados))
 
+        #--- Escolhas da luta ---#
         if escolha == "lutar1":
             batalha1()
         if escolha == "lutar2":
