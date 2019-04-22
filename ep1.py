@@ -259,6 +259,7 @@ def carregar_cenarios():
         "lutar5": {
             "titulo": "\nO fim se aproxima...",
             "descricao": "Você consegue ver o Raul",
+            "opcoes": {
                "LUTAR!": "Luta meu!"
            } 
         }
@@ -467,3 +468,4 @@ def main():
 # Programa principal.
 if __name__ == "__main__":
     main()
+
