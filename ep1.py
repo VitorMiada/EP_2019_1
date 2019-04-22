@@ -272,8 +272,12 @@ def carregar_cenarios():
             "titulo": "\nO fim se aproxima...",
             "descricao": "Você consegue ver o Raul",
             "opcoes": {
-               "LUTAR!": "Luta meu!"
+               "luta_final": "Luta meu!"
            } 
+        },
+        "luta_final": {
+            "titulo": "A sobrevivência do mais forte"
+            "descricao": "O RAUL TE ATACA"
         }
     }
 
@@ -448,6 +452,7 @@ def main():
                 inventario["arduino"] = 1
             elif "arduino" in inventario:
                 cenarios["5"]["descricao"] = "Você voltou para o restaurante."
+            print("Você comeu um salgado e recuperou sua vida!")
         if escolha == "disfarce":
             if "Prototipo" not in inventario:
                 inventario["Protótipo"] = 1
@@ -503,6 +508,10 @@ def main():
         if escolha == "lutar2":
             batalha1()
         if escolha == "lutar3":
+            batalha1()
+        if escolha == "lutar4":
+            batalha1()
+        if escolha == "luta_final"
             batalha1()
 
 # Programa principal.
