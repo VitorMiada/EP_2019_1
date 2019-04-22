@@ -2,11 +2,17 @@
 # - aluno Vitor Kenzo Fujiwara Miada, sophiaks@al.insper.edu.br
 # - aluno B: Sophia Kerber Shigueoka, vitorkfm@al.insper.edu.br
 import random
+import json
 inventario = {}
 pontos_carisma = {
     "carisma": 10
 }
 aliados = []
+#----JSON----#
+with open('jsonv2.txt','r') as arquivo:
+   conteudo = arquivo.read()
+   dicsalas = json.loads(conteudo)
+
 
 def carregar_cenarios():
     cenarios = {
@@ -269,14 +275,14 @@ def carregar_cenarios():
             }
         },
         "lutar5": {
-            "titulo": "\nO fim se aproxima...",
-            "descricao": "Você consegue ver o Raul",
-            "opcoes": {
-               "luta_final": "Luta meu!"
-           } 
+            "titulo": "?",
+            "descricao": "?",
+            "opcoes": {
+                "elevador": "Elevador"
+            }
         },
         "luta_final": {
-            "titulo": "A sobrevivência do mais forte"
+            "titulo": "A sobrevivência do mais forte",
             "descricao": "O RAUL TE ATACA"
         }
     }
@@ -511,7 +517,7 @@ def main():
             batalha1()
         if escolha == "lutar4":
             batalha1()
-        if escolha == "luta_final"
+        if escolha == "luta_final":
             batalha1()
 
 # Programa principal.
