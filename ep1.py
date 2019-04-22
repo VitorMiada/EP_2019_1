@@ -256,7 +256,7 @@ def carregar_cenarios():
                 "lutar5": "Lutar contra os golens"
             }
         },
-        "lutar5": {
+        "lutar5": {
             "titulo": "\nO fim se aproxima...",
             "descricao": "Você consegue ver o Raul",
             "opcoes": {
@@ -457,6 +457,10 @@ def main():
             for v in pontos_carisma.values():
                 v += 2
             inventario["Bola de futebol"] = 0
+        if escolha == "3":
+            with open('arquivo.txt', 'r') as arquivo:
+                conteudo = arquivo.read()
+                print(conteudo)
 
         if escolha == "lutar1":
             batalha1()
