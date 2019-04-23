@@ -257,7 +257,7 @@ def carregar_cenarios():
         },
         "bola": {
             "opcoes": {
-                "quadra": "Você volta para a quadra."
+                "entidades": "Você volta para sala de entidades"
             }
         },
         "fugir": {
@@ -276,7 +276,8 @@ def carregar_cenarios():
         },
         "luta final": {
             "titulo": "A sobrevivência do mais forte",
-            "descricao": " VOCE CONSEGUIU ADIAR O EP. Mas tambem teve que pagar as contas do hospital do Raul, o processo que receberá do Raul e a suspensão que vc levará :(. Portanto, não bata em seus professores, faça o EP adiantado, comam frutas e bebam agua!",     
+            "descricao": " VOCE CONSEGUIU ADIAR O EP. Mas tambem teve que pagar as contas do hospital do Raul, o processo que receberá do Raul e a suspensão que vc levará :(. Portanto, não bata em seus professores, faça o EP adiantado, comam frutas e bebam agua!",
+                         
         }
     }
 
@@ -304,10 +305,11 @@ def batalha1():
             if vida_do_inimigo < 70:
                 a = random.randint(1, 2)
                 if a == 2:
-                    n = random.randint(10, 50)
+                    n = random.randint(30, 70)
                     dano = n
                     sua_vida -= dano
-                    print("O inimigo te bateu!. Sua vida agora é {0}".format(sua_vida))
+                    print(
+                        "O inimigo te bateu!. Sua vida agora é {0}".format(sua_vida))
 
             #---Derrotou o inimigo---#
             if vida_do_inimigo <= 0:
@@ -365,7 +367,7 @@ def batalha1():
             if vida_do_inimigo < 70:
                 a = random.randint(1, 2)
                 if a == 2:
-                    n = random.randint(10, 30)
+                    n = random.randint(30, 70)
                     dano = n
                     sua_vida -= dano
                     print("O inimigo te bateu!. Sua vida agora é {0}".format(sua_vida))
@@ -395,7 +397,7 @@ def batalha1():
                     sua_vida -= dano
                     print("O inimigo te bateu!. Sua vida agora é {0}".format(sua_vida))
                     
-            #---Derrotou o inimigo---#
+            #---Derrotou o inimigo---#        
             if vida_do_inimigo <= 0:
                 print("Parabéns, você derrotou o professor!!!")
                 print("Sua vida: {0}".format(sua_vida))
@@ -403,8 +405,90 @@ def batalha1():
             if sua_vida <= 0:
                 print("Você morreu!\nSe você souber o nome de alguma sala no Insper, é possível se teletransportar e voltar a jogar.\nCaso o contrário, você perdeu!")
                 a = input("nome da sala")
-                if 'a' in dicsalas:
-                    print("Sala válida")
+                if a in dicsalas:
+                    print ("Parabens voce acertou!")
+def batalha_final():
+    print (inventario)
+    sua_vida = 100
+    vida_do_inimigo = 1000
+    print("\nVida do inimigo: {0}".format(vida_do_inimigo))
+    print("Sua vida: {0}".format(sua_vida))
+    print("\nA A WILD RAUL APPEARED!")
+    while vida_do_inimigo > 0 and sua_vida > 0:
+         itens_batalha_final = input("Nesta batalha voce poderá ultilizar apenas os itens coletados durante a sua jornada!/nO que voce quer ultilizar?/n")
+         if itens_batalha_final == "Espada da modelagem":
+             if len(aliados)>2:
+                 print ("Seus aliados te ajudaram nesta batalha")
+                 n = random.randint(40, 150)
+                 dano = n
+                 vida_do_inimigo -= dano
+                 print("\nVida do inimigo: {0}".format(vida_do_inimigo))
+                 print("Sua vida: {0}".format(sua_vida))
+             elif len(aliados)<=2:
+                 n = random.randint(40, 120)
+                 dano = n
+                 vida_do_inimigo -= dano
+                 print("\nVida do inimigo: {0}".format(vida_do_inimigo))
+                 print("Sua vida: {0}".format(sua_vida))
+         if itens_batalha_final == "Bola de futebol":
+              n = random.randint(10, 250)
+              dano = n
+              vida_do_inimigo -= dano
+              print("\nVida do inimigo: {0}".format(vida_do_inimigo))
+              print("Sua vida: {0}".format(sua_vida))
+         if itens_batalha_final == "Termorresistencia":
+             n = random.randint(60, 100)
+             dano = n
+             vida_do_inimigo -= dano
+             print("\nVida do inimigo: {0}".format(vida_do_inimigo))
+             print("Sua vida: {0}".format(sua_vida))
+         if itens_batalha_final == "livro O Golem":             
+             n = random.randint(170, 200)
+             dano = n
+             vida_do_inimigo -= dano
+             print("\nVida do inimigo: {0}".format(vida_do_inimigo))
+             print("Sua vida: {0}".format(sua_vida))
+         if itens_batalha_final == "arduino":
+             n = random.randint(150, 175)
+             dano = n
+             vida_do_inimigo -= dano
+             print("\nVida do inimigo: {0}".format(vida_do_inimigo))
+             print("Sua vida: {0}".format(sua_vida))
+         if itens_batalha_final == "Prototipo":
+             n = random.randint(3, 10)
+             dano = n
+             vida_do_inimigo -= dano
+             print("\nVida do inimigo: {0}".format(vida_do_inimigo))
+             print("Sua vida: {0}".format(sua_vida))
+         if vida_do_inimigo <999:
+            
+            a = random.randint(1, 2)
+            if a == 2:
+                  n = random.randint(5, 15)
+                  
+                  dano = n
+                  sua_vida -= dano
+                  print(
+                        "O inimigo te bateu!. Sua vida agora é {0}".format(sua_vida))
+            if a == 1:
+                n = random.randint(20, 30)
+                  
+                dano = n
+                sua_vida -= dano
+                print(
+                        "O inimigo te bateu!. Sua vida agora é {0}".format(sua_vida))
+            if a == 3:
+                 n = random.randint(45, 50)
+                  
+                 dano = n
+                 sua_vida -= dano
+                 print(
+                        "O inimigo te bateu!. Sua vida agora é {0}".format(sua_vida))
+                
+             
+             
+             
+                 
 
 def main():
     print("Na hora do sufoco!")
@@ -459,17 +543,10 @@ def main():
         if escolha == "exemplar":
             inventario["Termorresistencia"] = 1
             aliados.append("Carlos")
-        if escolha == "ajuda":
+        if escolha == "Oferecer ajuda":
             inventario["Aliados"] = 1
-            if "Bola de futebol" in inventario:
-                cenarios["quadra"]["descricao"] = "Você não tem mais o que fazer na quadra"
-                dict.popitem(cenarios["ajuda"]["opcoes"]["ajuda"])
-                dict.popitem(cenarios["ajuda"]["opcoes"]["convencer"])
-
         if escolha == "pegar bola":
             inventario["Bola de futebol"] = 1
-            cenarios["quadra"]["descricao"] = "Você consegue ver que há alguém no meio da quadra"
-
         if escolha == "conversa":
             for v in pontos_carisma.values():
                 v -= 3
@@ -498,13 +575,9 @@ def main():
                 conteudo = arquivo.read()
                 print(conteudo)
         if escolha == "nerdbox":
-            if "Espada da modelagem" not in inventario:
-                inventario["Espada da modelagem"] = 1 
-                aliados.append("Pelicano")
-                print("Seus aliados: {0}".format(aliados))
-            elif "Espada da modelagem" in inventario:
-                cenarios["nerdbox"]["descricao"] = "O Pelicano foi embora e todos estão em silêncio."
-
+            inventario["Espada da modelagem"] = 1 
+            aliados.append("Pelicano")
+            print("Seus aliados: {0}".format(aliados))
         if escolha == "falar":
             for v in pontos_carisma.values():
                 v += 2
@@ -512,7 +585,7 @@ def main():
         if escolha == "ajuda":
             aliados.append("Amigo do EP")
             print("Seus aliados: {0}".format(aliados))
-        
+    
 
         #--- Escolhas da luta ---#
         if escolha == "lutar1":
@@ -524,8 +597,8 @@ def main():
         if escolha == "lutar4":
             batalha1()
         if escolha == "luta final":
-            batalha1()
-
+            batalha_final()
+        
 # Programa principal.
 if __name__ == "__main__":
     main()
